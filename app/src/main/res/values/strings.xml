@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Real Health</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_location">Location</string>
+    <string name="title_gallery">Gallery</string>
+    <string name="title_calender">Calender</string>
+    <string name="data1">2025.07.04</string>
 </resources>

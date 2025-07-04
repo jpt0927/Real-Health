@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.example.realhealth.R
 import com.example.realhealth.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -32,6 +34,11 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        binding.myButton.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_navigation_gallery)
+        }
+
         return root
     }
 

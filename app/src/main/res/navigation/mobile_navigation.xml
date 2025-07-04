@@ -9,17 +9,63 @@
         android:id="@+id/navigation_home"
         android:name="com.example.realhealth.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_location"
+            app:destination="@id/navigation_location" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_gallery"
+            app:destination="@id/navigation_gallery" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_calender"
+            app:destination="@id/navigation_calender" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.realhealth.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_location"
+        android:name="com.example.realhealth.ui.Location.LocationFragment"
+        android:label="@string/title_location"
+        tools:layout="@layout/fragment_location" >
+        <action
+            android:id="@+id/action_navigation_location_to_navigation_gallery"
+            app:destination="@id/navigation_gallery" />
+        <action
+            android:id="@+id/action_navigation_location_to_navigation_calender"
+            app:destination="@id/navigation_calender" />
+        <action
+            android:id="@+id/action_navigation_location_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.realhealth.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_gallery"
+        android:name="com.example.realhealth.ui.Gallery.GalleryFragment"
+        android:label="@string/title_gallery"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_navigation_gallery_to_navigation_calender"
+            app:destination="@id/navigation_calender" />
+        <action
+            android:id="@+id/action_navigation_gallery_to_navigation_location"
+            app:destination="@id/navigation_location" />
+        <action
+            android:id="@+id/action_navigation_gallery_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_calender"
+        android:name="com.example.realhealth.ui.Calender.CalenderFragment"
+        android:label="@string/title_calender"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_navigation_calender_to_navigation_location"
+            app:destination="@id/navigation_location" />
+        <action
+            android:id="@+id/action_navigation_calender_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_calender_to_navigation_gallery"
+            app:destination="@id/navigation_gallery" />
+    </fragment>
 </navigation>

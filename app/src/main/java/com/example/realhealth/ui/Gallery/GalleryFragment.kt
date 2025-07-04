@@ -36,6 +36,7 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -63,6 +64,7 @@ import com.example.realhealth.databinding.FragmentGalleryBinding
 import com.example.realhealth.model.Affirmation
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.draw.clip
 
 class GalleryFragment : Fragment() {
 
@@ -142,7 +144,36 @@ fun MainApp() {
                     .clickable { showSingleImageBox = !showSingleImageBox },
                 contentAlignment = Alignment.Center
             ) {
-                Text("으악 사각형이다~", color = Color.Black)
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .size(100.dp)
+                            .clip(RoundedCornerShape(10.dp))
+                            .background(Color(0xFF9D9D9D))
+                    )
+                    Box() {
+                        Text("메인 사진 프레임")
+                    }
+                    Box() {
+                        Text("운동 기록 리스트")
+                    }
+                    Row() {
+                        Button(
+                            onClick = { showSingleImageBox = !showSingleImageBox },
+                            modifier = Modifier.padding(10.dp)
+                        ) {
+                            Text("확인")
+                        }
+                        Button(
+                            {},
+                            modifier = Modifier.padding(10.dp)
+                        ) {
+                            Text("삭제")
+                        }
+                    }
+                }
             }
         }
     }

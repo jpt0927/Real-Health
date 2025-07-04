@@ -11,30 +11,11 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_navigation_location"
-            app:destination="@id/navigation_location" />
-        <action
             android:id="@+id/action_navigation_home_to_navigation_gallery"
             app:destination="@id/navigation_gallery" />
         <action
             android:id="@+id/action_navigation_home_to_navigation_calender"
             app:destination="@id/navigation_calender" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/navigation_location"
-        android:name="com.example.realhealth.ui.Location.LocationFragment"
-        android:label="@string/title_location"
-        tools:layout="@layout/fragment_location" >
-        <action
-            android:id="@+id/action_navigation_location_to_navigation_gallery"
-            app:destination="@id/navigation_gallery" />
-        <action
-            android:id="@+id/action_navigation_location_to_navigation_calender"
-            app:destination="@id/navigation_calender" />
-        <action
-            android:id="@+id/action_navigation_location_to_navigation_home"
-            app:destination="@id/navigation_home" />
     </fragment>
 
     <fragment
@@ -46,9 +27,6 @@
             android:id="@+id/action_navigation_gallery_to_navigation_calender"
             app:destination="@id/navigation_calender" />
         <action
-            android:id="@+id/action_navigation_gallery_to_navigation_location"
-            app:destination="@id/navigation_location" />
-        <action
             android:id="@+id/action_navigation_gallery_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
@@ -58,9 +36,6 @@
         android:name="com.example.realhealth.ui.Calender.CalenderFragment"
         android:label="@string/title_calender"
         tools:layout="@layout/fragment_gallery" >
-        <action
-            android:id="@+id/action_navigation_calender_to_navigation_location"
-            app:destination="@id/navigation_location" />
         <action
             android:id="@+id/action_navigation_calender_to_navigation_home"
             app:destination="@id/navigation_home" />

@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">Real Health</string>
     <string name="title_home">Home</string>
-    <string name="title_location">Location</string>
     <string name="title_gallery">Gallery</string>
     <string name="title_calender">Calender</string>
+
     <string name="data1">2025.07.04</string>
+
+    <string name="sunday">SUN</string>
+    <string name="monday">MON</string>
+    <string name="tuesday">TUE</string>
+    <string name="wednesday">WED</string>
+    <string name="thursday">THU</string>
+    <string name="friday">FRI</string>
+    <string name="saturday">SAT</string>
+
 </resources>

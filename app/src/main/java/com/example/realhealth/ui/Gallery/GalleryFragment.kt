@@ -36,6 +36,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -67,8 +68,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntOffset
 import kotlin.math.roundToInt
+import com.example.realhealth.ui.ShowCalender.*
 
 class GalleryFragment : Fragment() {
 
@@ -114,6 +117,7 @@ class GalleryFragment : Fragment() {
 fun MainApp() {
     val layoutDirection = LocalLayoutDirection.current
     var showSingleImageBox by remember { mutableStateOf(false) }
+    var showAddingImageBox by remember { mutableStateOf(false) }
 
     Surface(
         modifier = Modifier
@@ -130,11 +134,217 @@ fun MainApp() {
     ) {
         GalleryContentList(
             affirmationList = Datasource().loadAffirmations(),
-            onClick = { showSingleImageBox = !showSingleImageBox }
+            onClick = { if (!showAddingImageBox) showSingleImageBox = !showSingleImageBox }
         )
+        AddImageButton(
+            state = showAddingImageBox or showSingleImageBox
+        ) { if (!showSingleImageBox) showAddingImageBox = !showAddingImageBox }
         MainSingleImage(
             state = showSingleImageBox
         ) { showSingleImageBox = !showSingleImageBox }
+        MainAddingImage(
+            state = showAddingImageBox
+        ) { showAddingImageBox = !showAddingImageBox }
+    }
+}
+
+@Composable
+fun AddImageButton(state: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    AnimatedVisibility(
+        visible = !state,
+        enter = slideInVertically(
+            initialOffsetY = { fullHeight -> fullHeight }
+        ),
+        exit = slideOutVertically (
+            targetOffsetY  = { fullHeight -> fullHeight }
+        )
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Bottom
+        ) {
+            Box(modifier = Modifier
+                .clip(CircleShape)
+                .background(color = Color(0xFF2196F3))
+                .size(55.dp)
+                .clickable() { onClick() }
+            ) {
+                Text(
+                    text = "+",
+                    color = Color(0xFFEEEEEE),
+                    fontSize = 40.sp,
+                    fontWeight = FontWeight.Light,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.align(Alignment.Center)
+                    )
+            }
+            Box(modifier = Modifier.height(10.dp))
+        }
+    }
+}
+
+@Composable
+fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    var offsetY by remember { mutableStateOf(0f) }
+    val density = LocalDensity.current.density
+
+    LaunchedEffect(state) {
+        if (state) offsetY = 0f
+    }
+
+    AnimatedVisibility(
+        visible = state,
+        enter = slideInVertically(
+            initialOffsetY = { fullHeight -> fullHeight }
+        ),
+        exit = slideOutVertically (
+            targetOffsetY  = { fullHeight -> fullHeight }
+        )
+    ) {
+        Column(
+            modifier = Modifier
+                .offset { IntOffset(0, offsetY.roundToInt()) }
+                .clickable(enabled = false) {},
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Bottom,
+        ) {
+            Box(modifier = Modifier
+                .height(17.dp)
+                .width(370.dp)
+                .draggable(
+                    orientation = Orientation.Vertical,
+                    state = rememberDraggableState { delta ->
+                        if ((offsetY == 0f) and (delta > 0)) {
+                            offsetY += delta
+                        } else if (offsetY > 0) {
+                            offsetY += delta
+                        }
+                        if (offsetY < 0) offsetY = 0f
+                    },
+                    onDragStopped = { velocity ->
+                        println(velocity)
+                        if ((velocity > 9000f) or (offsetY / density > 270.dp.value)) {
+                            onClick()
+                        } else {
+                            offsetY = 0f
+                        }
+                    }
+                )
+            )
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(25.dp, 25.dp, 0.dp, 0.dp))
+                    .width(370.dp)
+                    .height(705.dp)
+                    .background(Color(0xFFD9D9D9)),
+                contentAlignment = Alignment.TopCenter
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .height(18.dp)
+                            .draggable(
+                                orientation = Orientation.Vertical,
+                                state = rememberDraggableState { delta ->
+                                    if ((offsetY == 0f) and (delta > 0)) {
+                                        offsetY += delta
+                                    } else if (offsetY > 0) {
+                                        offsetY += delta
+                                    }
+                                    if (offsetY < 0) offsetY = 0f
+                                },
+                                onDragStopped = { velocity ->
+                                    println(velocity)
+                                    if ((velocity > 9000f) or (offsetY / density > 270.dp.value)) {
+                                        onClick()
+                                    } else {
+                                        offsetY = 0f
+                                    }
+                                }
+                            ),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Box(modifier = Modifier
+                            .height(5.dp)
+                            .width(370.dp))
+                        Box(contentAlignment = Alignment.Center) {
+                            Box(modifier = Modifier
+                                .width(70.dp)
+                                .height(4.dp))
+                            Box(
+                                modifier = Modifier
+                                    .width(70.dp)
+                                    .height(4.dp)
+                                    .clip(RoundedCornerShape(10.dp))
+                                    .background(Color(0xFF9D9D9D))
+                                    .padding(100.dp)
+                            )
+                        }
+                        Box(modifier = Modifier
+                            .height(9.dp)
+                            .width(370.dp))
+                    }
+                    Box(
+                        modifier = Modifier
+                            .width(349.dp)
+                            .height(304.dp)
+                            .clip(RoundedCornerShape(17.dp))
+                    ) {
+                        CalenderMain("2025.07.05", 349, 304, Color(0xFF1294F2))
+                        Text("메인 달력 프레임")
+                    }
+                    Box(modifier = Modifier.height(9.dp))
+                    Box(modifier = Modifier.height(207.dp)) {
+                        LazyVerticalGrid(
+                            modifier = Modifier.padding(10.dp),
+                            columns = GridCells.Fixed(3)
+                        ) {
+                            items(listOf(1, 2, 3, 4, 5, 6)) { item ->
+                                Image(
+                                    painter = painterResource(R.drawable.ic_launcher_foreground),
+                                    contentDescription = item.toString(),
+                                    modifier = Modifier.aspectRatio(109f/95f)
+                                        .width(95.dp).height(109.dp),
+                                    contentScale = ContentScale.Crop
+                                )
+                            }
+                        }
+                    }
+                    Box(modifier = Modifier.height(13.dp))
+                    Row() {
+                        Button(
+                            onClick = {},
+                            modifier = Modifier
+                                .width(161.dp)
+                                .height(34.44.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color(0xFFB0E0C1),
+                                contentColor = Color.Black
+                            ),
+                            shape = RoundedCornerShape(8.dp)
+                        ) {
+                            Text("업로드")
+                        }
+                        Box(modifier = Modifier.width(25.dp))
+                        Button(
+                            onClick = onClick,
+                            modifier = Modifier
+                                .width(161.dp)
+                                .height(34.44.dp),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = Color(0xFFE0B0B1),
+                                contentColor = Color.Black
+                            ),
+                            shape = RoundedCornerShape(8.dp)
+                        ) {
+                            Text("취소")
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -158,26 +368,48 @@ fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
     ) {
         Column(
             modifier = Modifier
-                .offset { IntOffset(0, offsetY.roundToInt()) },
+                .offset { IntOffset(0, offsetY.roundToInt()) }
+                .clickable(enabled = false) {},
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Bottom,
         ) {
-            Box(modifier = Modifier.height(17.dp))
+            Box(modifier = Modifier
+                .height(17.dp)
+                .width(370.dp)
+                .draggable(
+                    orientation = Orientation.Vertical,
+                    state = rememberDraggableState { delta ->
+                        if ((offsetY == 0f) and (delta > 0)) {
+                            offsetY += delta
+                        } else if (offsetY > 0) {
+                            offsetY += delta
+                        }
+                        if (offsetY < 0) offsetY = 0f
+                    },
+                    onDragStopped = { velocity ->
+                        println(velocity)
+                        if ((velocity > 9000f) or (offsetY / density > 270.dp.value)) {
+                            onClick()
+                        } else {
+                            offsetY = 0f
+                        }
+                    }
+                )
+            )
             Box(
                 modifier = Modifier
                     .clip(RoundedCornerShape(25.dp, 25.dp, 0.dp, 0.dp))
                     .width(370.dp)
                     .height(705.dp)
-                    .background(Color(0xFFD9D9D9))
-                    .clickable(enabled = false) {},
+                    .background(Color(0xFFD9D9D9)),
                 contentAlignment = Alignment.TopCenter
             ) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
-                    Box(modifier = Modifier.height(5.dp))
-                    Box(
+                    Column(
                         modifier = Modifier
+                            .height(18.dp)
                             .draggable(
                                 orientation = Orientation.Vertical,
                                 state = rememberDraggableState { delta ->
@@ -196,20 +428,37 @@ fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                                         offsetY = 0f
                                     }
                                 }
+                            ),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Box(modifier = Modifier
+                            .height(5.dp)
+                            .width(370.dp))
+                        Box(contentAlignment = Alignment.Center) {
+                            Box(modifier = Modifier
+                                .width(70.dp)
+                                .height(4.dp))
+                            Box(
+                                modifier = Modifier
+                                    .width(70.dp)
+                                    .height(4.dp)
+                                    .clip(RoundedCornerShape(10.dp))
+                                    .background(Color(0xFF9D9D9D))
+                                    .padding(100.dp)
                             )
-                            .width(70.dp)
-                            .height(4.dp)
-                            .clip(RoundedCornerShape(10.dp))
-                            .background(Color(0xFF9D9D9D))
-                            .padding(100.dp)
-                    )
-                    Box(modifier = Modifier.height(9.dp))
+                        }
+                        Box(modifier = Modifier
+                            .height(9.dp)
+                            .width(370.dp))
+                    }
                     Box() {
                         Image(
                             painter = painterResource(R.drawable.dataimage1),
                             contentDescription = "main image",
                             contentScale = ContentScale.Crop,
-                            modifier = Modifier.width(349.dp).height(304.dp)
+                            modifier = Modifier
+                                .width(349.dp)
+                                .height(304.dp)
                                 .clip(RoundedCornerShape(17.dp))
                         )
                         Text("메인 사진 프레임")
@@ -217,7 +466,8 @@ fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                     Box(modifier = Modifier.height(9.dp))
                     Box(
                         contentAlignment = Alignment.Center,
-                        modifier = Modifier.height(34.dp)
+                        modifier = Modifier
+                            .height(34.dp)
                             .width(347.dp)
                             .clip(RoundedCornerShape(8.dp))
                             .background(Color(0xFFB0D2E0))
@@ -235,7 +485,8 @@ fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                             items(listOf(1, 2, 3, 4, 5)) { exercise ->
                                 Box(
                                     contentAlignment = Alignment.Center,
-                                    modifier = Modifier.height(34.dp)
+                                    modifier = Modifier
+                                        .height(34.dp)
                                         .width(347.dp)
                                         .clip(RoundedCornerShape(8.dp))
                                         .background(Color(0xFFAEBEC4))
@@ -255,7 +506,9 @@ fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                     Row() {
                         Button(
                             onClick = onClick,
-                            modifier = Modifier.width(161.dp).height(34.44.dp),
+                            modifier = Modifier
+                                .width(161.dp)
+                                .height(34.44.dp),
                             colors = ButtonDefaults.buttonColors(
                                 containerColor = Color(0xFFB0E0C1),
                                 contentColor = Color.Black
@@ -267,7 +520,9 @@ fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                         Box(modifier = Modifier.width(25.dp))
                         Button(
                             {},
-                            modifier = Modifier.width(161.dp).height(34.44.dp),
+                            modifier = Modifier
+                                .width(161.dp)
+                                .height(34.44.dp),
                             colors = ButtonDefaults.buttonColors(
                                 containerColor = Color(0xFFE0B0B1),
                                 contentColor = Color.Black

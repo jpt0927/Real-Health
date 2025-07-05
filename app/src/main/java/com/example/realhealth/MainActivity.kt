@@ -1,5 +1,6 @@
 package com.example.realhealth
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val navView: BottomNavigationView = binding.navView
 

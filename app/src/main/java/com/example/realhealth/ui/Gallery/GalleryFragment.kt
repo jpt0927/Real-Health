@@ -292,7 +292,7 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                             .height(304.dp)
                             .clip(RoundedCornerShape(17.dp))
                     ) {
-                        CalenderMain("2025.07.05", 349, 304, Color(0xFF1294F2))
+                        CalenderMain(349, 304, Color(0xFF1294F2))
                         Text("메인 달력 프레임")
                     }
                     Box(modifier = Modifier.height(9.dp))

@@ -34,11 +34,11 @@ enum class CalenderPage {
 
 
 @Composable
-fun CalenderMain(DisplayDate: String, width: Int, height: Int, color: Color, modifier: Modifier = Modifier) {
+fun CalenderMain(width: Int, height: Int, color: Color, modifier: Modifier = Modifier) {
     var CalenderImage: CalenderPage by remember { mutableStateOf(CalenderPage.Days) }
-    var DisplayDate: String by remember { mutableStateOf(DisplayDate) }
 
     val calender = java.util.Calendar.getInstance()
+    var DisplayDate: String by remember { mutableStateOf(String.format("%04d", calender.get(Calendar.YEAR)) + "." + String.format("%02d", calender.get(Calendar.MONTH) + 1) + "." + String.format("%02d", calender.get(Calendar.DAY_OF_MONTH))) }
     var CurrentDate: String by remember { mutableStateOf(String.format("%04d", calender.get(Calendar.YEAR)) + "." + String.format("%02d", calender.get(Calendar.MONTH) + 1) + "." + String.format("%02d", calender.get(Calendar.DAY_OF_MONTH))) }
 
     val MonthMinusOne = {
@@ -330,5 +330,5 @@ fun CalenderTextBox(CurrentDate: String, width: Int, height: Int, modifier: Modi
 @Preview
 @Composable
 fun previewMain() {
-    CalenderMain("2025.07.05", 349, 304, Color(0xFF1294F2))
+    CalenderMain(349, 304, Color(0xFF1294F2))
 }

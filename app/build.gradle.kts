@@ -60,6 +60,8 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview.android)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.runtime.saved.instance.state)
+    implementation(libs.coil.compose)
+    implementation(libs.androidx.activity.compose)
     debugImplementation(libs.androidx.ui.tooling)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

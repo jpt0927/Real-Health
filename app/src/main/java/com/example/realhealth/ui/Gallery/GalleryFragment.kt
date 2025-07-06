@@ -1,15 +1,22 @@
 package com.example.realhealth.ui.Gallery
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.gestures.Orientation
 import androidx.compose.foundation.gestures.draggable
@@ -19,6 +26,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.calculateEndPadding
@@ -32,12 +40,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -45,9 +55,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.Updater
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -66,12 +76,18 @@ import com.example.realhealth.databinding.FragmentGalleryBinding
 import com.example.realhealth.model.Affirmation
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntOffset
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageResult
 import kotlin.math.roundToInt
 import com.example.realhealth.ui.ShowCalender.*
+import java.io.File
+import java.io.FileOutputStream
+import java.util.Calendar
 
 class GalleryFragment : Fragment() {
 
@@ -119,6 +135,30 @@ fun MainApp() {
     var showSingleImageBox by remember { mutableStateOf(false) }
     var showAddingImageBox by remember { mutableStateOf(false) }
 
+    val context = LocalContext.current
+    val directory = context.filesDir
+    var file_list by remember { mutableStateOf<List<File>>(emptyList()) }
+
+    var SingleImage by remember { mutableStateOf<File?>(null) }
+
+    val update_file_list = {
+        file_list = directory.listFiles()?.toList() ?: emptyList()
+        if (file_list.size > 0) {
+            file_list = file_list.filter {
+                it.isFile && it.name.startsWith("MYIMG_") && it.name.endsWith(".jpg") && (it.name.length > 17)}
+            file_list = file_list.sortedByDescending { it.name.slice(6..14).toInt() }
+        }
+        println(file_list)
+    }
+
+    val Select_SingleImage = { input: String ->
+        SingleImage = File(context.filesDir, input)
+    }
+
+    LaunchedEffect(Unit) {
+        update_file_list()
+    }
+
     Surface(
         modifier = Modifier
             .fillMaxSize()
@@ -133,18 +173,24 @@ fun MainApp() {
             ),
     ) {
         GalleryContentList(
-            affirmationList = Datasource().loadAffirmations(),
-            onClick = { if (!showAddingImageBox) showSingleImageBox = !showSingleImageBox }
+            onClick = { if (!showAddingImageBox) showSingleImageBox = !showSingleImageBox },
+            file_list,
+            Select_SingleImage
         )
         AddImageButton(
             state = showAddingImageBox or showSingleImageBox
         ) { if (!showSingleImageBox) showAddingImageBox = !showAddingImageBox }
         MainSingleImage(
-            state = showSingleImageBox
-        ) { showSingleImageBox = !showSingleImageBox }
+            state = showSingleImageBox,
+            file = SingleImage,
+            Updater = update_file_list,
+            onClick = { showSingleImageBox = !showSingleImageBox }
+        )
         MainAddingImage(
-            state = showAddingImageBox
-        ) { showAddingImageBox = !showAddingImageBox }
+            state = showAddingImageBox,
+            Updater = update_file_list,
+            onClick = { showAddingImageBox = !showAddingImageBox }
+        )
     }
 }
 
@@ -184,9 +230,34 @@ fun AddImageButton(state: Boolean, modifier: Modifier = Modifier, onClick: () ->
 }
 
 @Composable
-fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {
+fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit, Updater: () -> Unit) {
+    val calender = java.util.Calendar.getInstance()
+    var currentDate by remember { mutableStateOf(String.format("%04d", calender.get(Calendar.YEAR)) + "." + String.format("%02d", calender.get(Calendar.MONTH) + 1) + "." + String.format("%02d", calender.get(Calendar.DAY_OF_MONTH))) }
+
+    val currentDateUpdate = { NewDate: String ->
+        currentDate = NewDate
+    }
+
     var offsetY by remember { mutableStateOf(0f) }
     val density = LocalDensity.current.density
+
+    var buttonEnable by remember { mutableStateOf(true) }
+
+    var selectedImageUris by remember { mutableStateOf<List<Uri>>(emptyList()) }
+    var savedImagePath by remember { mutableStateOf<String?>(null) }
+
+    val context = LocalContext.current
+
+    val galleryLauncher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.GetMultipleContents()
+    ) { uris: List<Uri> ->
+        if (uris.size > 5) {
+            android.widget.Toast.makeText(context, "사진은 최대 5장까지만 선택됩니다.", Toast.LENGTH_LONG).show()
+            selectedImageUris = uris.take(5)
+        } else {
+            selectedImageUris = uris
+        }
+    }
 
     LaunchedEffect(state) {
         if (state) offsetY = 0f
@@ -221,8 +292,11 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                         }
                         if (offsetY < 0) offsetY = 0f
                     },
+                    onDragStarted = {
+                        buttonEnable = false
+                    },
                     onDragStopped = { velocity ->
-                        println(velocity)
+                        buttonEnable = true
                         if ((velocity > 9000f) or (offsetY / density > 270.dp.value)) {
                             onClick()
                         } else {
@@ -255,8 +329,11 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                                     }
                                     if (offsetY < 0) offsetY = 0f
                                 },
+                                onDragStarted = {
+                                    buttonEnable = false
+                                },
                                 onDragStopped = { velocity ->
-                                    println(velocity)
+                                    buttonEnable = true
                                     if ((velocity > 9000f) or (offsetY / density > 270.dp.value)) {
                                         onClick()
                                     } else {
@@ -266,13 +343,17 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                             ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Box(modifier = Modifier
-                            .height(5.dp)
-                            .width(370.dp))
+                        Box(
+                            modifier = Modifier
+                                .height(5.dp)
+                                .width(370.dp)
+                        )
                         Box(contentAlignment = Alignment.Center) {
-                            Box(modifier = Modifier
-                                .width(70.dp)
-                                .height(4.dp))
+                            Box(
+                                modifier = Modifier
+                                    .width(70.dp)
+                                    .height(4.dp)
+                            )
                             Box(
                                 modifier = Modifier
                                     .width(70.dp)
@@ -282,9 +363,11 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                                     .padding(100.dp)
                             )
                         }
-                        Box(modifier = Modifier
-                            .height(9.dp)
-                            .width(370.dp))
+                        Box(
+                            modifier = Modifier
+                                .height(9.dp)
+                                .width(370.dp)
+                        )
                     }
                     Box(
                         modifier = Modifier
@@ -292,30 +375,69 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                             .height(304.dp)
                             .clip(RoundedCornerShape(17.dp))
                     ) {
-                        CalenderMain(349, 304, Color(0xFF1294F2))
-                        Text("메인 달력 프레임")
+                        CalenderMain(currentDate = currentDate, currentDateUpdate = currentDateUpdate, 349, 304, Color(0xFF1294F2))
                     }
                     Box(modifier = Modifier.height(9.dp))
-                    Box(modifier = Modifier.height(207.dp)) {
+                    Box(modifier = Modifier.height(212.dp)) {
                         LazyVerticalGrid(
-                            modifier = Modifier.padding(10.dp),
-                            columns = GridCells.Fixed(3)
+                            modifier = Modifier.padding(top = 0.dp, bottom = 0.dp, start = 10.dp, end = 10.dp),
+                            columns = GridCells.Fixed(3),
+                            userScrollEnabled = false
                         ) {
-                            items(listOf(1, 2, 3, 4, 5, 6)) { item ->
+                            items(listOf(0, 1, 2, 3, 4, 5)) { item ->
                                 Image(
-                                    painter = painterResource(R.drawable.ic_launcher_foreground),
+                                    painter = when (item) {
+                                        0 -> painterResource(R.drawable.image_adder)
+                                        else -> if (item-1 < selectedImageUris.size) rememberAsyncImagePainter(model = selectedImageUris[item-1])
+                                                else painterResource(R.drawable.image_notyet)
+                                    },
                                     contentDescription = item.toString(),
-                                    modifier = Modifier.aspectRatio(109f/95f)
-                                        .width(95.dp).height(109.dp),
+                                    modifier = Modifier
+                                        .aspectRatio(109f / 95f)
+                                        .width(95.dp)
+                                        .height(109.dp)
+                                        .padding(2.dp)
+                                        .clickable(
+                                            enabled = if (item == 0) buttonEnable else false,
+                                            onClick = {
+                                                if (item == 0) {
+                                                    galleryLauncher.launch("image/*")
+                                                }
+                                            }),
                                     contentScale = ContentScale.Crop
                                 )
                             }
                         }
                     }
-                    Box(modifier = Modifier.height(13.dp))
+                    Box(modifier = Modifier.height(8.dp))
                     Row() {
                         Button(
-                            onClick = {},
+                            onClick = {
+                                if (selectedImageUris.size > 0) {
+                                    val filename = "MYIMG_${currentDate.slice(0..3)}${currentDate.slice(5..6)}${currentDate.slice(8..9)}"
+
+                                    for (i in 0..selectedImageUris.size-1) {
+                                        val file = File(context.filesDir, filename + i.toString() + ".jpg")
+                                        try {
+                                            val outputStream = FileOutputStream(file)
+                                            val inputStream = context.contentResolver.openInputStream(selectedImageUris[i])
+                                            inputStream.use { input ->
+                                                outputStream.use { output ->
+                                                    input?.copyTo(output)
+                                                }
+                                            }
+                                            Toast.makeText(context, "${selectedImageUris.size}개의 파일을 저장하였습니다.", Toast.LENGTH_SHORT).show()
+                                        } catch (e: Exception) {
+                                            Toast.makeText(context, "파일을 저장하지 못했습니다.", Toast.LENGTH_LONG).show()
+                                        }
+                                    }
+                                    selectedImageUris = emptyList()
+                                    Updater()
+                                    onClick()
+                                } else {
+                                    Toast.makeText(context, "선택된 파일이 없습니다.", Toast.LENGTH_SHORT).show()
+                                }
+                            },
                             modifier = Modifier
                                 .width(161.dp)
                                 .height(34.44.dp),
@@ -329,7 +451,10 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                         }
                         Box(modifier = Modifier.width(25.dp))
                         Button(
-                            onClick = onClick,
+                            onClick = {
+                                selectedImageUris = emptyList()
+                                onClick()
+                            },
                             modifier = Modifier
                                 .width(161.dp)
                                 .height(34.44.dp),
@@ -349,12 +474,34 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
 }
 
 @Composable
-fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -> Unit) {
+fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, onClick: () -> Unit, Updater: () -> Unit) {
     var offsetY by remember { mutableStateOf(0f) }
     val density = LocalDensity.current.density
 
+    val context = LocalContext.current
+
+    var FileCount = 0
+    var FileIndex by remember { mutableStateOf(0) }
+
+    var offsetX by remember { mutableStateOf(0f) }
+
+    val name = file?.name?.slice(0..13) ?: ""
+    val file1 = File(context.filesDir, name + "0.jpg")
+    val file2 = File(context.filesDir, name + "1.jpg")
+    val file3 = File(context.filesDir, name + "2.jpg")
+    val file4 = File(context.filesDir, name + "3.jpg")
+    val file5 = File(context.filesDir, name + "4.jpg")
+
+    if (file5.exists()) FileCount = 5
+    else if (file4.exists()) FileCount = 4
+    else if (file3.exists()) FileCount = 3
+    else if (file2.exists()) FileCount = 2
+    else if (file1.exists()) FileCount = 1
+    else FileCount = 0
+
     LaunchedEffect(state) {
         if (state) offsetY = 0f
+        if (state) FileIndex = 0
     }
 
     AnimatedVisibility(
@@ -452,16 +599,103 @@ fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                             .width(370.dp))
                     }
                     Box() {
-                        Image(
-                            painter = painterResource(R.drawable.dataimage1),
-                            contentDescription = "main image",
-                            contentScale = ContentScale.Crop,
+                        // 메인 그림
+                        Box(
                             modifier = Modifier
                                 .width(349.dp)
                                 .height(304.dp)
                                 .clip(RoundedCornerShape(17.dp))
-                        )
-                        Text("메인 사진 프레임")
+                                .draggable(
+                                    orientation = Orientation.Horizontal,
+                                    state = rememberDraggableState { delta ->
+                                        if ((FileIndex > 0) and (delta > 0)) {
+                                            offsetX += delta
+                                        } else if ((FileIndex < FileCount-1) and (delta < 0)) {
+                                            offsetX += delta
+                                        }
+                                    },
+                                    onDragStopped = { velocity ->
+                                        if ((velocity < -9000f) or (offsetX / density < -180.dp.value)) {
+                                            offsetX = 0f
+                                            if (FileIndex < FileCount-1) FileIndex += 1
+                                        } else if ((velocity > 9000f) or (offsetX / density > 180.dp.value)) {
+                                            offsetX = 0f
+                                            if (FileIndex > 0) FileIndex -= 1
+                                        }
+                                        offsetX = 0f
+                                    }
+                                )
+                        ) {
+                            Image(
+                                painter = if (file1.exists()) rememberAsyncImagePainter(model = file1) else painterResource(R.drawable.dataimage1),
+                                contentDescription = "main image1",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier
+                                    .width(349.dp)
+                                    .height(304.dp)
+                                    .absoluteOffset(x = (0 - 349 * FileIndex).dp, y = 0.dp)
+                                    .offset { IntOffset(offsetX.roundToInt(), 0) }
+                            )
+                            Image(
+                                painter = if (file2.exists()) rememberAsyncImagePainter(model = file2) else painterResource(R.drawable.dataimage1),
+                                contentDescription = "main image2",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier
+                                    .width(349.dp)
+                                    .height(304.dp)
+                                    .absoluteOffset(x = (349 - 349 * FileIndex).dp, y = 0.dp)
+                                    .offset { IntOffset(offsetX.roundToInt(), 0) }
+                            )
+                            Image(
+                                painter = if (file3.exists()) rememberAsyncImagePainter(model = file3) else painterResource(R.drawable.dataimage1),
+                                contentDescription = "main image3",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier
+                                    .width(349.dp)
+                                    .height(304.dp)
+                                    .absoluteOffset(x = (349 * 2 - 349 * FileIndex).dp, y = 0.dp)
+                                    .offset { IntOffset(offsetX.roundToInt(), 0) }
+                            )
+                            Image(
+                                painter = if (file4.exists()) rememberAsyncImagePainter(model = file4) else painterResource(R.drawable.dataimage1),
+                                contentDescription = "main image4",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier
+                                    .width(349.dp)
+                                    .height(304.dp)
+                                    .absoluteOffset(x = (349 * 3 - 349 * FileIndex).dp, y = 0.dp)
+                                    .offset { IntOffset(offsetX.roundToInt(), 0) }
+                            )
+                            Image(
+                                painter = if (file5.exists()) rememberAsyncImagePainter(model = file5) else painterResource(R.drawable.dataimage1),
+                                contentDescription = "main image5",
+                                contentScale = ContentScale.Crop,
+                                modifier = Modifier
+                                    .width(349.dp)
+                                    .height(304.dp)
+                                    .absoluteOffset(x = (349 * 4 - 349 * FileIndex).dp, y = 0.dp)
+                                    .offset { IntOffset(offsetX.roundToInt(), 0) }
+                            )
+                        }
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center,
+                            modifier = Modifier.width(349.dp)
+                        ) {
+                            Box(modifier = Modifier.height(284.dp))
+                            LazyRow(
+                                modifier = Modifier.height(8.dp),
+                                horizontalArrangement = Arrangement.Center
+                            ) {
+                                items((0..FileCount-1).toList()) { item ->
+                                    if (item != 0) Box(modifier = Modifier.size(5.dp))
+                                    Box(modifier = Modifier.size(8.dp).clip(CircleShape)
+                                        .background(color = if (FileIndex == item) Color(0xFF5E5757) else Color(0xFFD9D9D9))
+                                        .border(width = 0.3.dp, color = Color.Black, shape = CircleShape))
+                                }
+                            }
+                            Box(modifier = Modifier.height(12.dp))
+                        }
                     }
                     Box(modifier = Modifier.height(9.dp))
                     Box(
@@ -519,7 +753,32 @@ fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                         }
                         Box(modifier = Modifier.width(25.dp))
                         Button(
-                            {},
+                            onClick = {
+                                if (file != null) {
+                                    onClick()
+                                    if (file1.exists()) {
+                                        if (file1.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
+                                        else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                        if (file2.exists()) {
+                                            if (file2.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
+                                            else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                            if (file3.exists()) {
+                                                if (file3.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
+                                                else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                                if (file4.exists()) {
+                                                    if (file4.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
+                                                    else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                                    if (file5.exists()) {
+                                                        if (file5.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
+                                                        else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    Updater()
+                                }
+                            },
                             modifier = Modifier
                                 .width(161.dp)
                                 .height(34.44.dp),
@@ -540,36 +799,43 @@ fun MainSingleImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
 
 
 @Composable
-fun GalleryContentList(onClick: () -> Unit, affirmationList: List<Affirmation>, modifier: Modifier = Modifier) {
+fun GalleryContentList(onClick: () -> Unit, file_list: List<File>, Select_SingleImage: (String) -> Unit, modifier: Modifier = Modifier) {
+    val directory = LocalContext.current.filesDir
+
     LazyVerticalGrid(
         columns = GridCells.Fixed(3),
-        modifier = modifier
+        modifier = modifier.background(color = Color(0x00FFFFFF))
     ) {
-        items(affirmationList) { image ->
+        items(file_list.filter {
+            it.name[14].toString() == "0"
+        }) { image ->
             GalleryImage(
-                onClick = onClick,
-                affirmation = image,
+                onClick = {
+                    Select_SingleImage(image.name)
+                    onClick()
+                },
+                file = image,
                 modifier = Modifier.padding(3.dp)
             )
+            println(image)
         }
     }
 }
 
 @Composable
-fun GalleryImage(onClick: () -> Unit, affirmation: Affirmation, modifier: Modifier = Modifier) {
+fun GalleryImage(onClick: () -> Unit, file: File, modifier: Modifier = Modifier) {
     val imageSize = 194
 
     Card(
         shape = RoundedCornerShape(4.dp),
         modifier = modifier.clickable {
-            println("CLick ${affirmation.DataNum}!")
             onClick()
         }
     ) {
         Box() {
             Image(
-                painter = painterResource(affirmation.imageResourceId),
-                contentDescription = stringResource(affirmation.stringResourceId),
+                painter = rememberAsyncImagePainter(model = file),
+                contentDescription = file.name,
                 modifier = Modifier.aspectRatio(1f/1f),
                 contentScale = ContentScale.Crop
             )
@@ -578,7 +844,7 @@ fun GalleryImage(onClick: () -> Unit, affirmation: Affirmation, modifier: Modifi
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = LocalContext.current.getString(affirmation.stringResourceId),
+                    text = file.name.slice(6..9) + "." + file.name.slice(10..11) + "." + file.name.slice(12..13),
                     color = Color.Black,
                     fontSize = (imageSize / 25).sp,
                     textAlign = TextAlign.Center,

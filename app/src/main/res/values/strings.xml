@@ -14,4 +14,7 @@
     <string name="friday">FRI</string>
     <string name="saturday">SAT</string>
 
+    <string name="workout">운동</string>
+    <string name="google_maps_key">AIzaSyC96lr88tKic-fNWkBWED_A5KP0PRzJNhg</string>
+
 </resources>

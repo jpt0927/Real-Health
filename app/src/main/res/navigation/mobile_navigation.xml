@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_navigation_home_to_navigation_calender"
             app:destination="@id/navigation_calender" />
+        <action
+            android:id="@+id/action_navigation_home_to_gymDetailFragment"
+            app:destination="@id/gymDetailFragment" />
     </fragment>
 
     <fragment
@@ -43,4 +46,17 @@
             android:id="@+id/action_navigation_calender_to_navigation_gallery"
             app:destination="@id/navigation_gallery" />
     </fragment>
+
+
+    <fragment
+        android:id="@+id/gymDetailFragment"
+        android:name="com.example.realhealth.ui.home.GymDetailFragment"
+        android:label="Gym Detail"
+        tools:layout="@layout/gym_detail">
+
+        <argument
+            android:name="gym"
+            app:argType="com.example.realhealth.model.Gym" />
+    </fragment>
+
 </navigation>

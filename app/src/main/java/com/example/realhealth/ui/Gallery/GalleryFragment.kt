@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
@@ -34,6 +35,7 @@ import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
@@ -81,10 +83,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.IntSize
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageResult
 import kotlin.math.roundToInt
@@ -194,6 +201,21 @@ fun MainApp() {
             onClick = { showAddingImageBox = !showAddingImageBox }
         )
     }
+
+    val view = LocalView.current
+    val navController: NavController = remember(view) {
+        try {
+            Navigation.findNavController(view)
+        } catch (e: Exception) {
+            throw IllegalStateException("NavController not found")
+        }
+    }
+
+    BackHandler {
+        if (showSingleImageBox) showSingleImageBox = false
+        else if (showAddingImageBox) showAddingImageBox = false
+        else navController.navigate(R.id.navigation_home)
+    }
 }
 
 @Composable
@@ -247,6 +269,9 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
 
     var selectedImageUris by remember { mutableStateOf<List<Uri>>(emptyList()) }
     var savedImagePath by remember { mutableStateOf<String?>(null) }
+
+    var weightedCalenderHeightdp by remember { mutableStateOf(0) }
+    var weightedCalenderWidthdp by remember { mutableStateOf(0) }
 
     val context = LocalContext.current
 
@@ -374,18 +399,24 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                     }
                     Box(
                         modifier = Modifier
-                            .width(349.dp)
-                            .height(304.dp)
+                            .weight(1f)
                             .clip(RoundedCornerShape(17.dp))
+                            .onSizeChanged { size: IntSize ->
+                                weightedCalenderHeightdp = (size.height / density).toInt()
+                                println("$weightedCalenderWidthdp, $weightedCalenderHeightdp")
+                            }
                     ) {
-                        CalenderMain(currentDate = currentDate, currentDateUpdate = currentDateUpdate, 349, 304, Color(0xFF1294F2))
+                        CalenderMain(currentDate = currentDate, currentDateUpdate = currentDateUpdate, 349, weightedCalenderHeightdp, Color(0xFF1294F2))
                     }
-                    Box(modifier = Modifier.height(9.dp))
-                    Box(modifier = Modifier.height(212.dp)) {
+                    Box(modifier = Modifier.height(5.dp))
+                    Box(
+                        modifier = Modifier.height(212.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
                         LazyVerticalGrid(
                             modifier = Modifier.padding(top = 0.dp, bottom = 0.dp, start = 10.dp, end = 10.dp),
                             columns = GridCells.Fixed(3),
-                            userScrollEnabled = false
+                            userScrollEnabled = false,
                         ) {
                             items(listOf(0, 1, 2, 3, 4, 5)) { item ->
                                 Image(
@@ -412,7 +443,7 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                             }
                         }
                     }
-                    Box(modifier = Modifier.height(8.dp))
+                    Box(modifier = Modifier.height(5.dp))
                     Row() {
                         Button(
                             onClick = {
@@ -470,6 +501,7 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                             Text("취소")
                         }
                     }
+                    Box(modifier = Modifier.height(10.dp))
                 }
             }
         }
@@ -726,7 +758,8 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                             .background(Color(0xFFB0D2E0))
                     ) {
                         Row(
-                            horizontalArrangement = Arrangement.Center
+                            horizontalArrangement = Arrangement.Center,
+                            modifier = Modifier.imePadding()
                         ) {
                             Text(
                                 text = "#",
@@ -746,8 +779,8 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                             )
                         }
                     }
-                    Box(modifier = Modifier.height(13.dp))
-                    Box(modifier = Modifier.height(160.dp)) {
+                    Box(modifier = Modifier.height(10.dp))
+                    Box(modifier = Modifier.weight(1f)) {
                         LazyColumn {
                             items(listOf(1, 2, 3, 4, 5)) { exercise ->
                                 Box(
@@ -769,7 +802,7 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                             }
                         }
                     }
-                    Box(modifier = Modifier.height(13.dp))
+                    Box(modifier = Modifier.height(10.dp))
                     Row() {
                         Button(
                             onClick = {
@@ -831,6 +864,7 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                             Text("삭제")
                         }
                     }
+                    Box(modifier = Modifier.height(10.dp))
                 }
             }
         }
@@ -886,11 +920,11 @@ fun GalleryImage(onClick: () -> Unit, file: File, modifier: Modifier = Modifier)
                 Text(
                     text = file.name.slice(6..9) + "." + file.name.slice(10..11) + "." + file.name.slice(12..13),
                     color = Color.Black,
-                    fontSize = (imageSize / 25).sp,
+                    fontSize = (imageSize / 17).sp,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .background(Color(0xBfD9D9D9))
-                        .size(width = 45.dp, height = (imageSize / 25 + 2).dp)
+                        .padding(start = 1.dp, end = 1.dp)
                 )
             }
         }

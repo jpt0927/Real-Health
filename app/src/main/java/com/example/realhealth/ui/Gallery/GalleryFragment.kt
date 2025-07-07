@@ -92,6 +92,8 @@ import com.example.realhealth.ui.ShowCalender.*
 import java.io.File
 import java.io.FileOutputStream
 import java.util.Calendar
+import kotlin.math.max
+import kotlin.math.min
 
 class GalleryFragment : Fragment() {
 
@@ -112,10 +114,6 @@ class GalleryFragment : Fragment() {
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 
@@ -166,15 +164,15 @@ fun MainApp() {
     Surface(
         modifier = Modifier
             .fillMaxSize()
-            .fillMaxSize()
+            .background(color = Color.Black)
             .statusBarsPadding()
             .padding(
                 start = WindowInsets.safeDrawing.asPaddingValues()
-                    .calculateStartPadding(layoutDirection) + 8.dp,
+                    .calculateStartPadding(layoutDirection),
                 end = WindowInsets.safeDrawing.asPaddingValues()
-                    .calculateEndPadding(layoutDirection) + 8.dp,
-                bottom = 104.dp
-            ),
+                    .calculateEndPadding(layoutDirection),
+                bottom = 56.dp
+            )
     ) {
         GalleryContentList(
             onClick = { if (!showAddingImageBox) showSingleImageBox = !showSingleImageBox },
@@ -265,6 +263,7 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
 
     LaunchedEffect(state) {
         if (state) offsetY = 0f
+        selectedImageUris = emptyList()
     }
 
     AnimatedVisibility(
@@ -622,10 +621,16 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                                 .draggable(
                                     orientation = Orientation.Horizontal,
                                     state = rememberDraggableState { delta ->
-                                        if ((FileIndex > 0) and (delta > 0)) {
+                                        val max = if (FileIndex == 0) 0 else 349
+                                        val min = if (FileIndex == FileCount - 1) 0 else -349
+                                        if ((offsetX / density >= min) and (offsetX / density <= max)) {
                                             offsetX += delta
-                                        } else if ((FileIndex < FileCount-1) and (delta < 0)) {
-                                            offsetX += delta
+                                        }
+                                        if (offsetX / density <= min) {
+                                            offsetX = min * density
+                                        }
+                                        if (offsetX / density >= max) {
+                                            offsetX = max * density
                                         }
                                     },
                                     onDragStopped = { velocity ->

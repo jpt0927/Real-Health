@@ -51,6 +51,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -99,6 +100,7 @@ import com.example.realhealth.ui.ShowCalender.*
 import java.io.File
 import java.io.FileOutputStream
 import java.util.Calendar
+import androidx.compose.ui.platform.LocalFocusManager
 import kotlin.math.max
 import kotlin.math.min
 
@@ -164,6 +166,24 @@ fun MainApp() {
         SingleImage = File(context.filesDir, input)
     }
 
+    val onSearch = { input: String ->
+        val RealString = input.trimStart().trimEnd()
+        val FormatDate = Regex("^\\d{4}\\.(0[1-9]|1[0-2])\\.(0[1-9]|[12][0-9]|3[01])$")
+        if (RealString.matches(FormatDate)) {
+            val search_list = file_list.filter {
+                it.name.slice(6..13) == RealString.slice(0..3) + RealString.slice(5..6) + RealString.slice(8..9)
+            }
+            if (search_list.size == 0) {
+                Toast.makeText(context, "검색 결과가 없습니다.", Toast.LENGTH_SHORT).show()
+            } else {
+                Select_SingleImage("MYIMG_" + RealString.slice(0..3) + RealString.slice(5..6) + RealString.slice(8..9) + ".jpg")
+                showSingleImageBox = true
+            }
+        } else {
+            Toast.makeText(context, "YYYY.MM.DD 형식으로 적어주세요.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     LaunchedEffect(Unit) {
         update_file_list()
     }
@@ -171,8 +191,7 @@ fun MainApp() {
     Surface(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.Black)
-            .statusBarsPadding()
+            .background(color = Color.White)
             .padding(
                 start = WindowInsets.safeDrawing.asPaddingValues()
                     .calculateStartPadding(layoutDirection),
@@ -181,11 +200,36 @@ fun MainApp() {
                 bottom = 56.dp
             )
     ) {
-        GalleryContentList(
-            onClick = { if (!showAddingImageBox) showSingleImageBox = !showSingleImageBox },
-            file_list,
-            Select_SingleImage
-        )
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top
+        ) {
+            Box(modifier = Modifier.height(10.dp))
+            SearchGalleryImageByCurrentDate(onSearch = onSearch)
+            Box(modifier = Modifier.height(5.dp))
+            GalleryContentList(
+                onClick = { if (!showAddingImageBox) showSingleImageBox = !showSingleImageBox },
+                file_list,
+                Select_SingleImage
+            )
+            if (file_list.size == 0) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center,
+                    modifier = Modifier.fillMaxSize()
+                ) {
+                    Text(
+                        text = "사진이 존재하지 않습니다.",
+                        fontSize = 18.sp
+                    )
+                    Box(modifier = Modifier.height(3.dp))
+                    Text(
+                        text = "업로드한 사진을 여기에서 한 번에 볼 수 있습니다.",
+                        fontSize = 10.sp
+                    )
+                }
+            }
+        }
         AddImageButton(
             state = showAddingImageBox or showSingleImageBox
         ) { if (!showSingleImageBox) showAddingImageBox = !showAddingImageBox }
@@ -215,6 +259,64 @@ fun MainApp() {
         if (showSingleImageBox) showSingleImageBox = false
         else if (showAddingImageBox) showAddingImageBox = false
         else navController.navigate(R.id.navigation_home)
+    }
+}
+
+@Composable
+fun SearchGalleryImageByCurrentDate(modifier: Modifier = Modifier, onSearch: (String) -> Unit) {
+    var textState by remember { mutableStateOf("") }
+    val focusManager = LocalFocusManager.current
+
+    Box(
+        modifier = Modifier.width(370.dp).height(43.dp)
+            .clip(RoundedCornerShape(11.dp))
+            .background(color = Color(0xFFD9D9D9))
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier.align(Alignment.Center)
+        ) {
+            Box(modifier = Modifier.width(10.dp))
+            Image(
+                painter = painterResource(R.drawable.dotbogi),
+                modifier = Modifier.size(23.dp),
+                contentDescription = null
+            )
+            Box(modifier = Modifier.width(5.dp))
+            BasicTextField(
+                value = textState,
+                onValueChange = { textState = it },
+                textStyle = TextStyle(
+                    fontSize = 20.sp,
+                    textAlign = TextAlign.Left,
+                    color = Color(0xFF949494),
+                ),
+                decorationBox = { innerTextField ->
+                    Box() {
+                        if (textState.isEmpty()) {
+                            Text(
+                                text = "Search (YYYY.MM.DD)",
+                                fontSize = 20.sp,
+                                textAlign = TextAlign.Left,
+                                color = Color(0xFF949494),
+                            )
+                        }
+                        innerTextField()
+                    }
+                },
+                singleLine = true,
+                keyboardActions = KeyboardActions(
+                    onDone = {
+                        focusManager.clearFocus()
+                        onSearch(textState)
+                    }
+                ),
+                modifier = Modifier
+                    .weight(1f)
+            )
+            Box(modifier = Modifier.width(10.dp))
+        }
     }
 }
 
@@ -338,7 +440,7 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                     .clip(RoundedCornerShape(25.dp, 25.dp, 0.dp, 0.dp))
                     .width(370.dp)
                     .height(705.dp)
-                    .background(Color(0xFFD9D9D9)),
+                    .background(Color(0xFFCCCCCC)),
                 contentAlignment = Alignment.TopCenter
             ) {
                 Column(
@@ -514,6 +616,7 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
 
     val density = LocalDensity.current.density
     val context = LocalContext.current
+    val focusManager = LocalFocusManager.current
 
     var FileCount = 0
     var FileIndex by remember { mutableStateOf(0) }
@@ -593,7 +696,7 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                     .clip(RoundedCornerShape(25.dp, 25.dp, 0.dp, 0.dp))
                     .width(370.dp)
                     .height(705.dp)
-                    .background(Color(0xFFD9D9D9)),
+                    .background(Color(0xFFCCCCCC)),
                 contentAlignment = Alignment.TopCenter
             ) {
                 Column(
@@ -614,7 +717,7 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                                 },
                                 onDragStopped = { velocity ->
                                     println(velocity)
-                                    if ((velocity > 9000f) or (offsetY / density > 270.dp.value)) {
+                                    if ((velocity > 8000f) or (offsetY / density > 270.dp.value)) {
                                         onClick()
                                     } else {
                                         offsetY = 0f
@@ -666,10 +769,10 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                                         }
                                     },
                                     onDragStopped = { velocity ->
-                                        if ((velocity < -9000f) or (offsetX / density < -180.dp.value)) {
+                                        if ((velocity < -8000f) or (offsetX / density < -180.dp.value)) {
                                             offsetX = 0f
                                             if (FileIndex < FileCount-1) FileIndex += 1
-                                        } else if ((velocity > 9000f) or (offsetX / density > 180.dp.value)) {
+                                        } else if ((velocity > 8000f) or (offsetX / density > 180.dp.value)) {
                                             offsetX = 0f
                                             if (FileIndex > 0) FileIndex -= 1
                                         }
@@ -758,8 +861,7 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                             .background(Color(0xFFB0D2E0))
                     ) {
                         Row(
-                            horizontalArrangement = Arrangement.Center,
-                            modifier = Modifier.imePadding()
+                            horizontalArrangement = Arrangement.Center
                         ) {
                             Text(
                                 text = "#",
@@ -774,6 +876,11 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                                     textAlign = TextAlign.Left
                                 ),
                                 singleLine = true,
+                                keyboardActions = KeyboardActions(
+                                    onDone = {
+                                        focusManager.clearFocus()
+                                    }
+                                ),
                                 modifier = Modifier
                                     .width(347.dp)
                             )
@@ -830,25 +937,24 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                                 if (file != null) {
                                     onClick()
                                     if (file1.exists()) {
-                                        if (file1.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
-                                        else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                        file1.delete()
                                         if (file2.exists()) {
-                                            if (file2.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
-                                            else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                            file2.delete()
                                             if (file3.exists()) {
-                                                if (file3.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
-                                                else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                                file3.delete()
                                                 if (file4.exists()) {
-                                                    if (file4.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
-                                                    else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                                    file4.delete()
                                                     if (file5.exists()) {
-                                                        if (file5.delete()) Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
-                                                        else Toast.makeText(context, "파일을 삭제하지 못했습니다.", Toast.LENGTH_SHORT).show()
+                                                        file5.delete()
                                                     }
                                                 }
                                             }
                                         }
                                     }
+                                    if (File(context.filesDir, name + ".txt").exists()) {
+                                        File(context.filesDir, name + ".txt").delete()
+                                    }
+                                    Toast.makeText(context, "파일을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
                                     Updater()
                                 }
                             },

@@ -1,6 +1,7 @@
 package com.example.realhealth.ui.Gallery
 
 import android.content.Intent
+import android.graphics.Paint
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -47,12 +48,14 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.Updater
@@ -79,6 +82,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntOffset
 import coil.compose.rememberAsyncImagePainter
@@ -476,8 +480,8 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
 @Composable
 fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, onClick: () -> Unit, Updater: () -> Unit) {
     var offsetY by remember { mutableStateOf(0f) }
-    val density = LocalDensity.current.density
 
+    val density = LocalDensity.current.density
     val context = LocalContext.current
 
     var FileCount = 0
@@ -499,9 +503,19 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
     else if (file1.exists()) FileCount = 1
     else FileCount = 0
 
+    var textboxTag by remember { mutableStateOf("오운완") }
+
     LaunchedEffect(state) {
         if (state) offsetY = 0f
         if (state) FileIndex = 0
+
+        val file = File(context.filesDir, name + ".txt")
+        if (file.exists()) {
+            val text = file.readText()
+            textboxTag = text
+        } else {
+            textboxTag = "오운완"
+        }
     }
 
     AnimatedVisibility(
@@ -699,19 +713,33 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                     }
                     Box(modifier = Modifier.height(9.dp))
                     Box(
-                        contentAlignment = Alignment.Center,
+                        contentAlignment = Alignment.CenterStart,
                         modifier = Modifier
                             .height(34.dp)
                             .width(347.dp)
                             .clip(RoundedCornerShape(8.dp))
                             .background(Color(0xFFB0D2E0))
                     ) {
-                        Text(
-                            text = "운동 기록",
-                            color = Color.Black,
-                            fontSize = 20.sp,
-                            textAlign = TextAlign.Center,
-                        )
+                        Row(
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Text(
+                                text = "#",
+                                fontSize = 20.sp,
+                                textAlign = TextAlign.Left
+                            )
+                            BasicTextField(
+                                value = textboxTag,
+                                onValueChange = { textboxTag = it },
+                                textStyle = TextStyle(
+                                    fontSize = 20.sp,
+                                    textAlign = TextAlign.Left
+                                ),
+                                singleLine = true,
+                                modifier = Modifier
+                                    .width(347.dp)
+                            )
+                        }
                     }
                     Box(modifier = Modifier.height(13.dp))
                     Box(modifier = Modifier.height(160.dp)) {
@@ -739,7 +767,14 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                     Box(modifier = Modifier.height(13.dp))
                     Row() {
                         Button(
-                            onClick = onClick,
+                            onClick = {
+                                onClick()
+                                try {
+                                    File(context.filesDir, name + ".txt").writeText(textboxTag)
+                                } catch (e: Exception) {
+                                    e.printStackTrace()
+                                }
+                            },
                             modifier = Modifier
                                 .width(161.dp)
                                 .height(34.44.dp),

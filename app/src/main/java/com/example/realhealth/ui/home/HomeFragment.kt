@@ -8,15 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.activity.OnBackPressedCallback
+import android.widget.ImageButton
+import android.widget.PopupMenu
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.realhealth.ui.home.HomeFragmentDirections
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.activity.OnBackPressedCallback
-import android.widget.TextView
 import com.example.realhealth.R
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -36,17 +35,20 @@ import java.io.IOException
 import org.json.JSONObject
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 
 class HomeFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var toggleButton: Button
+    private lateinit var btnSearchHere: Button
+    private lateinit var btnSort: ImageButton
     private lateinit var recyclerView: FastScrollRecyclerView
     private lateinit var placesClient: PlacesClient
     private var isMapMode = true
     private val gymList = mutableListOf<Gym>()
+    private var isFirstMapIdle = true
 
-    // 위치 권한 요청 런처
     private val locationPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
@@ -59,6 +61,18 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
+    private fun sortGymsByDistance() {
+        gymList.sortBy {
+            it.distance?.replace("km", "")?.replace("m", "")?.toDoubleOrNull() ?: Double.MAX_VALUE
+        }
+        recyclerView.adapter?.notifyDataSetChanged()
+    }
+
+    private fun sortGymsByRating() {
+        gymList.sortByDescending { it.rating ?: 0.0 }
+        recyclerView.adapter?.notifyDataSetChanged()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -67,29 +81,49 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
         toggleButton = view.findViewById(R.id.toggle_button)
         recyclerView = view.findViewById(R.id.gym_list)
+        btnSearchHere = view.findViewById(R.id.btn_search_here)
+        btnSort = view.findViewById(R.id.btn_sort)
 
         recyclerView.visibility = View.GONE
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
         recyclerView.adapter = GymAdapter(gymList) { gym ->
             val action = HomeFragmentDirections.actionNavigationHomeToGymDetailFragment(gym)
             findNavController().navigate(action)
         }
-
+        btnSort.visibility = View.GONE
 
         toggleButton.setOnClickListener {
             if (isMapMode) {
                 searchNearbyGyms(mMap.cameraPosition.target)
-
                 toggleButton.text = "목록보기"
                 recyclerView.visibility = View.GONE
+                btnSort.visibility = View.GONE
             } else {
                 toggleButton.text = "지도보기"
                 recyclerView.visibility = View.VISIBLE
+                btnSort.visibility = View.VISIBLE
                 recyclerView.adapter?.notifyDataSetChanged()
             }
-
             isMapMode = !isMapMode
+        }
+
+        btnSort.setOnClickListener {
+            val popup = PopupMenu(requireContext(), btnSort)
+            popup.menuInflater.inflate(R.menu.sort_menu, popup.menu)
+            popup.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.menu_sort_distance -> {
+                        sortGymsByDistance()
+                        true
+                    }
+                    R.id.menu_sort_rating -> {
+                        sortGymsByRating()
+                        true
+                    }
+                    else -> false
+                }
+            }
+            popup.show()
         }
 
         return view
@@ -98,16 +132,44 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // 상세화면에서 돌아왔을 때 "목록보기"로 전환
+        parentFragmentManager.setFragmentResultListener("show_list_mode", viewLifecycleOwner) { _, _ ->
+            isMapMode = false
+            recyclerView.visibility = View.VISIBLE
+            btnSort.visibility = View.VISIBLE
+            toggleButton.text = "지도보기"
+            recyclerView.adapter?.notifyDataSetChanged()
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    if (!isMapMode) {
+                        // 목록보기 → 지도보기로 전환
+                        isMapMode = true
+                        recyclerView.visibility = View.GONE
+                        btnSort.visibility = View.GONE
+                        toggleButton.text = "목록보기"
+                        mMap.clear() // 지도 마커 제거
+                    } else {
+                        // 지도보기 → 기본 뒤로가기(앱 종료 등)
+                        isEnabled = false
+                        requireActivity().onBackPressedDispatcher.onBackPressed()
+                    }
+                }
+            }
+        )
+
         if (!Places.isInitialized()) {
             Places.initialize(requireContext(), getString(R.string.google_maps_key))
         }
         placesClient = Places.createClient(requireContext())
 
-        val mapFragment = childFragmentManager
-            .findFragmentById(R.id.map_fragment) as? SupportMapFragment
-
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map_fragment) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
     }
+
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
@@ -127,25 +189,52 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
         val seoulStation = LatLng(37.5563, 126.9723)
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seoulStation, 14f))
+
+        mMap.setOnCameraMoveStartedListener {
+            btnSearchHere.visibility = View.GONE
+        }
+
+        mMap.setOnCameraIdleListener {
+            if (isFirstMapIdle) {
+                isFirstMapIdle = false
+            } else {
+                btnSearchHere.visibility = View.VISIBLE
+            }
+        }
+
+        btnSearchHere.setOnClickListener {
+            val center = mMap.cameraPosition.target
+
+            mMap.clear()
+            gymList.clear()
+            recyclerView.adapter?.notifyDataSetChanged()
+
+            searchNearbyGyms(center)
+            btnSearchHere.visibility = View.GONE
+        }
     }
 
     override fun onResume() {
         super.onResume()
         if (::mMap.isInitialized) {
             mMap.clear()
-            gymList.clear()
+            // gymList.clear()
             recyclerView.adapter?.notifyDataSetChanged()
-            recyclerView.visibility = View.GONE
-            toggleButton.text = getString(R.string.workout)
-            isMapMode = true
+            recyclerView.visibility = if (isMapMode) View.GONE else View.VISIBLE
+            toggleButton.text = if (isMapMode) getString(R.string.workout) else "지도보기"
+            isFirstMapIdle = true
         }
     }
 
-    private fun getWalkingDistance(origin: LatLng, destination: LatLng, callback: (String?) -> Unit) {
+    private fun getWalkingDistance(
+        originLatLng: LatLng,
+        destinationPlaceId: String,
+        callback: (String?) -> Unit
+    ) {
         val apiKey = getString(R.string.google_maps_key)
         val url = "https://maps.googleapis.com/maps/api/directions/json" +
-                "?origin=${origin.latitude},${origin.longitude}" +
-                "&destination=${destination.latitude},${destination.longitude}" +
+                "?origin=${originLatLng.latitude},${originLatLng.longitude}" +
+                "&destination=place_id:$destinationPlaceId" +
                 "&mode=walking" +
                 "&language=ko" +
                 "&key=$apiKey"
@@ -161,15 +250,21 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
             override fun onResponse(call: Call, response: Response) {
                 val body = response.body?.string()
-                val json = JSONObject(body ?: "")
-                val routes = json.optJSONArray("routes")
-                if (routes != null && routes.length() > 0) {
-                    val legs = routes.getJSONObject(0).optJSONArray("legs")
-                    if (legs != null && legs.length() > 0) {
-                        val distance = legs.getJSONObject(0).optJSONObject("distance")?.optString("text")
-                        callback(distance)
-                        return
+                try {
+                    val json = JSONObject(body ?: "")
+                    val routes = json.optJSONArray("routes")
+                    if (routes != null && routes.length() > 0) {
+                        val legs = routes.getJSONObject(0).optJSONArray("legs")
+                        if (legs != null && legs.length() > 0) {
+                            val leg = legs.getJSONObject(0)
+                            val distance = leg.optJSONObject("distance")?.optString("text")
+                            callback(distance)
+                            return
+                        }
                     }
+                    Log.e("DistanceError", "Directions API failed. Raw JSON: $body")
+                } catch (e: Exception) {
+                    e.printStackTrace()
                 }
                 callback(null)
             }
@@ -223,10 +318,14 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
                         override fun onResponse(call: Call, response: Response) {
                             val detailBody = response.body?.string() ?: return
-                            val detailJson = JSONObject(detailBody).optJSONObject("result") ?: return
+                            val detailJson =
+                                JSONObject(detailBody).optJSONObject("result") ?: return
 
-                            val address = detailJson.optString("formatted_address", "주소 정보 없음")
-                            val phone = detailJson.optString("formatted_phone_number", "전화번호 정보 없음")
+                            val fullAddress =
+                                detailJson.optString("formatted_address", "주소 정보 없음")
+                            val address = fullAddress.replaceFirst("^대한민국\\s*".toRegex(), "")
+                            val phone =
+                                detailJson.optString("formatted_phone_number", "전화번호 정보 없음")
                             val openingHours = detailJson.optJSONObject("opening_hours")
                                 ?.optJSONArray("weekday_text")?.let { arr ->
                                     (0 until arr.length()).joinToString("\n") { arr.getString(it) }
@@ -243,14 +342,12 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                                         "&key=$apiKey"
                             } else null
 
-                            val rating = detailJson.optDouble("rating", -1.0)
-                                .takeIf { it >= 0 }
+                            val rating = detailJson.optDouble("rating", -1.0).takeIf { it >= 0 }
 
-                            // 도보 거리 계산
-                            val origin = LatLng(center.latitude, center.longitude)
+                            val origin = LatLng(37.554722, 126.970833)
                             val destination = LatLng(lat, lng)
 
-                            getWalkingDistance(origin, destination) { distanceText ->
+                            getWalkingDistance(origin, placeId) { distanceText ->
                                 val gym = Gym(
                                     name = name,
                                     lat = lat,
@@ -267,7 +364,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                                 handler.post {
                                     gymList.add(gym)
                                     recyclerView.adapter?.notifyItemInserted(gymList.size - 1)
-
                                     mMap.addMarker(
                                         MarkerOptions()
                                             .position(destination)

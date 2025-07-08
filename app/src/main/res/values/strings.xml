@@ -15,6 +15,6 @@
     <string name="saturday">SAT</string>
 
     <string name="workout">운동</string>
-    <string name="google_maps_key">AIzaSyC96lr88tKic-fNWkBWED_A5KP0PRzJNhg</string>
-
+    <string name="google_maps_key">AIzaSyCpuuk-3byjhtBGwiE8U2Ta62q0MBV5DII</string>
+    <string name="tmap_api_key">Vd8alTwqL638LZYiagpOXS5uEsRKFOm3jMhHODX9</string>
 </resources>

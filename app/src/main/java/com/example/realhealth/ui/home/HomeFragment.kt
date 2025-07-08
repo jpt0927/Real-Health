@@ -1,22 +1,25 @@
 package com.example.realhealth.ui.home
 
-import com.example.realhealth.model.Gym
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import androidx.activity.OnBackPressedCallback
 import android.widget.ImageButton
 import android.widget.PopupMenu
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.realhealth.R
+import com.example.realhealth.model.Gym
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -26,16 +29,13 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.net.PlacesClient
 import com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+import okhttp3.Call
+import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
-import okhttp3.Call
-import okhttp3.Callback
-import java.io.IOException
 import org.json.JSONObject
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
+import java.io.IOException
 
 class HomeFragment : Fragment(), OnMapReadyCallback {
 

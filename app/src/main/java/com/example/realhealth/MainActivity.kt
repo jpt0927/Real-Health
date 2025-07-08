@@ -1,19 +1,14 @@
 package com.example.realhealth
 
 import android.content.pm.ActivityInfo
-import android.os.Build
 import android.os.Bundle
-import android.util.TypedValue
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.layout.view
 import androidx.core.view.WindowCompat
-import androidx.core.view.setPadding
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.realhealth.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 

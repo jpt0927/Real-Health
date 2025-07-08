@@ -1,14 +1,10 @@
 package com.example.realhealth.ui.Gallery
 
-import android.content.Intent
-import android.graphics.Paint
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.compose.BackHandler
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -35,12 +31,10 @@ import androidx.compose.foundation.layout.calculateEndPadding
 import androidx.compose.foundation.layout.calculateStartPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -52,57 +46,50 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardActions
-import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.Updater
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.realhealth.R
-import com.example.realhealth.data.Datasource
-import com.example.realhealth.databinding.FragmentGalleryBinding
-import com.example.realhealth.model.Affirmation
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.onSizeChanged
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.platform.LocalView
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.IntOffset
-import androidx.compose.ui.unit.IntSize
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import coil.compose.rememberAsyncImagePainter
-import coil.request.ImageResult
-import kotlin.math.roundToInt
-import com.example.realhealth.ui.ShowCalender.*
+import com.example.realhealth.R
+import com.example.realhealth.databinding.FragmentGalleryBinding
+import com.example.realhealth.model.todo
+import com.example.realhealth.ui.ShowCalender.CalenderMain
+import com.google.gson.Gson
 import java.io.File
 import java.io.FileOutputStream
 import java.util.Calendar
-import androidx.compose.ui.platform.LocalFocusManager
-import kotlin.math.max
-import kotlin.math.min
+import kotlin.math.roundToInt
 
 class GalleryFragment : Fragment() {
 
@@ -202,7 +189,9 @@ fun MainApp() {
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Top
+            verticalArrangement = Arrangement.Top,
+            modifier = Modifier.fillMaxSize()
+                .background(color = Color.White)
         ) {
             Box(modifier = Modifier.height(10.dp))
             SearchGalleryImageByCurrentDate(onSearch = onSearch)
@@ -216,7 +205,7 @@ fun MainApp() {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize().background(color = Color.White)
                 ) {
                     Text(
                         text = "사진이 존재하지 않습니다.",
@@ -639,6 +628,20 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
 
     var textboxTag by remember { mutableStateOf("오운완") }
 
+    val filename = "TodoData.json"
+    val file = File(context.filesDir, filename)
+
+    var jsonDataList: List<todo> by remember { mutableStateOf(emptyList()) }
+
+    if (file.exists()) {
+        val jsonStringDataList = file.readText()
+        jsonDataList = Gson().fromJson(jsonStringDataList, Array<todo>::class.java).toList()
+    } else {
+        jsonDataList = emptyList()
+    }
+
+    val currentDate = if (name.length > 13) "${name.slice(6..9)}.${name.slice(10..11)}.${name.slice(12..13)}" else ""
+
     LaunchedEffect(state) {
         if (state) offsetY = 0f
         if (state) FileIndex = 0
@@ -889,23 +892,25 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                     Box(modifier = Modifier.height(10.dp))
                     Box(modifier = Modifier.weight(1f)) {
                         LazyColumn {
-                            items(listOf(1, 2, 3, 4, 5)) { exercise ->
-                                Box(
-                                    contentAlignment = Alignment.Center,
-                                    modifier = Modifier
-                                        .height(34.dp)
-                                        .width(347.dp)
-                                        .clip(RoundedCornerShape(8.dp))
-                                        .background(Color(0xFFAEBEC4))
-                                ) {
-                                    Text(
-                                        text = "운동 기록: $exercise",
-                                        color = Color.Black,
-                                        fontSize = 20.sp,
-                                        textAlign = TextAlign.Left,
-                                    )
+                            items(jsonDataList) { data ->
+                                if (data.date == currentDate) {
+                                    Box(
+                                        contentAlignment = Alignment.Center,
+                                        modifier = Modifier
+                                            .height(34.dp)
+                                            .width(347.dp)
+                                            .clip(RoundedCornerShape(8.dp))
+                                            .background(Color(0xFFAEBEC4))
+                                    ) {
+                                        Text(
+                                            text = data.name,
+                                            color = Color.Black,
+                                            fontSize = 20.sp,
+                                            textAlign = TextAlign.Left,
+                                        )
+                                    }
+                                    Box(modifier = Modifier.height(7.dp))
                                 }
-                                Box(modifier = Modifier.height(7.dp))
                             }
                         }
                     }
@@ -984,7 +989,7 @@ fun GalleryContentList(onClick: () -> Unit, file_list: List<File>, Select_Single
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(3),
-        modifier = modifier.background(color = Color(0x00FFFFFF))
+        modifier = modifier.background(color = Color(0xFFFFFFFF))
     ) {
         items(file_list.filter {
             it.name[14].toString() == "0"

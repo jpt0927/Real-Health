@@ -4,8 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class todo(
-    val data: String,
-    val classify: String,
-    val index: Int,
+    val date: String,
+    val name: String,
     val content: String
 )

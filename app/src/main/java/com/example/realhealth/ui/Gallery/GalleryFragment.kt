@@ -268,7 +268,7 @@ fun SearchGalleryImageByCurrentDate(modifier: Modifier = Modifier, onSearch: (St
     val focusManager = LocalFocusManager.current
 
     Box(
-        modifier = Modifier.width(370.dp).height(43.dp)
+        modifier = Modifier.width(360.dp).height(43.dp)
             .clip(RoundedCornerShape(11.dp))
             .background(color = Color(0xFFD9D9D9))
     ) {

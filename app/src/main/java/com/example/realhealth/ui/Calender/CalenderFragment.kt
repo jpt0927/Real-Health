@@ -193,7 +193,7 @@ fun MainAppCalender() {
     Surface(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.Black)
+            .background(color = Color.White)
             .padding(
                 start = WindowInsets.safeDrawing.asPaddingValues()
                     .calculateStartPadding(layoutDirection),
@@ -204,7 +204,8 @@ fun MainAppCalender() {
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Top
+            verticalArrangement = Arrangement.Top,
+            modifier = Modifier.fillMaxSize().background(color = Color.White)
         ) {
             Box(modifier = Modifier.height(10.dp))
             Box(

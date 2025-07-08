@@ -101,6 +101,7 @@ import java.io.File
 import java.io.FileOutputStream
 import java.util.Calendar
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.tooling.preview.Preview
 import kotlin.math.max
 import kotlin.math.min
 
@@ -202,7 +203,9 @@ fun MainApp() {
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Top
+            verticalArrangement = Arrangement.Top,
+            modifier = Modifier.fillMaxSize()
+                .background(color = Color.White)
         ) {
             Box(modifier = Modifier.height(10.dp))
             SearchGalleryImageByCurrentDate(onSearch = onSearch)
@@ -216,7 +219,7 @@ fun MainApp() {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center,
-                    modifier = Modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize().background(color = Color.White)
                 ) {
                     Text(
                         text = "사진이 존재하지 않습니다.",
@@ -984,7 +987,7 @@ fun GalleryContentList(onClick: () -> Unit, file_list: List<File>, Select_Single
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(3),
-        modifier = modifier.background(color = Color(0x00FFFFFF))
+        modifier = modifier.background(color = Color(0xFFFFFFFF))
     ) {
         items(file_list.filter {
             it.name[14].toString() == "0"

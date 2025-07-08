@@ -83,7 +83,9 @@ import androidx.navigation.Navigation
 import coil.compose.rememberAsyncImagePainter
 import com.example.realhealth.R
 import com.example.realhealth.databinding.FragmentGalleryBinding
+import com.example.realhealth.model.todo
 import com.example.realhealth.ui.ShowCalender.CalenderMain
+import com.google.gson.Gson
 import java.io.File
 import java.io.FileOutputStream
 import java.util.Calendar
@@ -626,6 +628,20 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
 
     var textboxTag by remember { mutableStateOf("오운완") }
 
+    val filename = "TodoData.json"
+    val file = File(context.filesDir, filename)
+
+    var jsonDataList: List<todo> by remember { mutableStateOf(emptyList()) }
+
+    if (file.exists()) {
+        val jsonStringDataList = file.readText()
+        jsonDataList = Gson().fromJson(jsonStringDataList, Array<todo>::class.java).toList()
+    } else {
+        jsonDataList = emptyList()
+    }
+
+    val currentDate = if (name.length > 13) "${name.slice(6..9)}.${name.slice(10..11)}.${name.slice(12..13)}" else ""
+
     LaunchedEffect(state) {
         if (state) offsetY = 0f
         if (state) FileIndex = 0
@@ -876,23 +892,25 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                     Box(modifier = Modifier.height(10.dp))
                     Box(modifier = Modifier.weight(1f)) {
                         LazyColumn {
-                            items(listOf(1, 2, 3, 4, 5)) { exercise ->
-                                Box(
-                                    contentAlignment = Alignment.Center,
-                                    modifier = Modifier
-                                        .height(34.dp)
-                                        .width(347.dp)
-                                        .clip(RoundedCornerShape(8.dp))
-                                        .background(Color(0xFFAEBEC4))
-                                ) {
-                                    Text(
-                                        text = "운동 기록: $exercise",
-                                        color = Color.Black,
-                                        fontSize = 20.sp,
-                                        textAlign = TextAlign.Left,
-                                    )
+                            items(jsonDataList) { data ->
+                                if (data.date == currentDate) {
+                                    Box(
+                                        contentAlignment = Alignment.Center,
+                                        modifier = Modifier
+                                            .height(34.dp)
+                                            .width(347.dp)
+                                            .clip(RoundedCornerShape(8.dp))
+                                            .background(Color(0xFFAEBEC4))
+                                    ) {
+                                        Text(
+                                            text = data.name,
+                                            color = Color.Black,
+                                            fontSize = 20.sp,
+                                            textAlign = TextAlign.Left,
+                                        )
+                                    }
+                                    Box(modifier = Modifier.height(7.dp))
                                 }
-                                Box(modifier = Modifier.height(7.dp))
                             }
                         }
                     }

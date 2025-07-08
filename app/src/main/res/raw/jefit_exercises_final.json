@@ -1,0 +1,6532 @@
+[
+    {
+        "name": "Barbell Bench Press",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Lat Pulldown (Wide Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Leg Extension",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Incline Bench Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Seated Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Tricep Pushdown (Rope)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Fly",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Bench Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Seated Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Leg Press",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Walking",
+        "body_part": "Cardio",
+        "equipment": "Cardio Machine"
+    },
+    {
+        "name": "Dumbbell Alternating Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Seated Leg Curl",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Row",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Incline Bench Press",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Pull-Up",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Barbell Bent-Over Row",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Curl",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Deadlift",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Machine Leg Curl (Prone)",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Seated Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Alternating Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Rope Face Pull",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Tricep Pushdown (V-Bar)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Hip Abduction",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dip",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Rope Overhead Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Fly",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Incline Chest Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Push-Up",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Incline Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Bench Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Plank",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Machine Hip Adduction",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Shoulder Shrug",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Romanian Deadlift",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Ab Crunch",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Seated Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Running",
+        "body_part": "Cardio",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Hip Thrust",
+        "body_part": "Glutes",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Hammer Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "EZ Bar Curl",
+        "body_part": "Biceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Preacher Curl Machine",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Military Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Cross-Over",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Treadmill Running",
+        "body_part": "Cardio",
+        "equipment": "Cardio Machine"
+    },
+    {
+        "name": "Crunch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Back Hyperextension",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Lat Pulldown",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Calf Press On Leg Press",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Shoulder Extension",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Concentration Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Incline Fly",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Elliptical Training",
+        "body_part": "Cardio",
+        "equipment": "Cardio Machine"
+    },
+    {
+        "name": "Leg Raise",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Upright Row",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Front Lat Pulldown (Close Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Preacher Curl",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Smith Machine Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Seated Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Hanging Leg Raise",
+        "body_part": "Abs",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Hack Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Bulgarian Split Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Kneeling Crunch (Rope)",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Lower Chest Raise",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Seated Arnold Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Assisted Pull-Up",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Weighted Pull-Up",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Cable Rope Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Weight Plate Russian Twist",
+        "body_part": "Abs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Barbell Shrug",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Smith Machine Incline Bench Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Road Cycling",
+        "body_part": "Cardio",
+        "equipment": "Other"
+    },
+    {
+        "name": "Dumbbell Bent-Over Row",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Goblet Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Bench Press (Close Grip)",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Mid Chest Crossover",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Pullover",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Leverage Machine Iso Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Standing Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Machine Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "T Bar Row",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Air Bike",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Machine Dip",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Preacher Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Romanian Deadlift",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Decline Crunch",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Leg Kickback",
+        "body_part": "Glutes",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable One-Arm Tricep Pushdown",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Leverage Incline Chest Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Deltoid Raise",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Tricep Kickback",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Side Bend",
+        "body_part": "Abs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Inner Chest Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Incline Bench Row",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bench Dip",
+        "body_part": "Triceps",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Parallel Bar Leg Raise",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable V Bar Pulldown",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Seated Side Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable One-Arm Tricep Pushdown (Reverse Grip)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Deadlift",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable One-Arm Lat Pulldown",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Bent-Over Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Chin-Up with Knee Raise",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "EZ Bar Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Cable One-Arm Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Hammer Curl (Cross Body)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Calf Press",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Single-Leg Extension",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Smith Machine Bench Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Seated Tricep Press",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Back Extension",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Step Machine",
+        "body_part": "Cardio",
+        "equipment": "Cardio Machine"
+    },
+    {
+        "name": "Barbell Decline Bench Press",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Step-Up",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Assisted Dip",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bodyweight Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "EZ Bar Decline Close Grip Skull Crusher",
+        "body_part": "Triceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Smith Machine Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Rowing",
+        "body_part": "Cardio",
+        "equipment": "Cardio Machine"
+    },
+    {
+        "name": "Dumbbell Walking Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Shoulder Extension",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stationary Bike",
+        "body_part": "Cardio",
+        "equipment": "Cardio Machine"
+    },
+    {
+        "name": "Cable Upright Row",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Weighted Tricep Dip",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Wrist Curl (Palms Up)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Reverse Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Indoor Cycling",
+        "body_part": "Cardio",
+        "equipment": "Cardio Machine"
+    },
+    {
+        "name": "Dumbbell Tricep Extension (Supine)",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Tricep Extension (Supine)",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Weighted Crunch",
+        "body_part": "Abs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Barbell Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Leverage Decline Chest Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Leg Press (Wide Stance)",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable One-Arm Seated Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Front Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Upright Row",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Leverage Chest Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Seated Tricep Dip",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Reverse Lat Pulldown (Close Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Reverse Crunch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable One-Arm Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Wood Chop",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Glute Bridge",
+        "body_part": "Glutes",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Side Plank",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Rope High Pulley Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Zottman Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Leverage Machine High Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Bodyweight Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Hanging Knee Raise",
+        "body_part": "Abs",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Parallel Bar Hip Raise",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Tricep Kickback",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable External Rotation",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Mountain Climber",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Reverse Curl",
+        "body_part": "Forearms",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Stiff-Leg Deadlift",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bench Weighted Decline Crunch",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Barbell Ab Rollout (Kneeling)",
+        "body_part": "Abs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Stiff-Leg Deadlift",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Machine Single-Leg Press",
+        "body_part": "Glutes",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Bulgarian Split Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Alternating Heel Touch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Tricep Extension (Supine)",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Wrist Curl (Palms Down)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Alternating Incline Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Tricep Kickback",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Skull Crusher (Reverse Grip)",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Seated Bent-Over Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Decline Bench Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Incline Fly",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Deltoid Raise",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Deep Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Smith Machine Shrug",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Bridge",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Leverage Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Bodyweight Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "EZ Bar Preacher Curl (Close Grip)",
+        "body_part": "Biceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Dumbbell Alternating Seated Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Swing",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Cable Reverse Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Bicep Curl (Close Grip)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Arnold Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable One-Arm Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable One-Arm Tricep Pushdown (Reverse Grip)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Kneeling Leg Curl",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Seated One-Arm Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Military Press (Seated)",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Bent-Over Row (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Row",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dead Bug",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Rear Pulldown (Wide Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Wrist Curl (Posterior)",
+        "body_part": "Forearms",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Rear Delt Row",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Glute Kickback",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Oblique Crunch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Single-Leg Deadlift",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Weight Plate Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Machine Lat Pulldown (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Plie Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable High Pulley Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Incline Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Alternating Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Seated Leg Tuck",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Barbell Good Morning",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Hip Abduction",
+        "body_part": "Glutes",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Jump Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Bird Dog",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Jump Rope",
+        "body_part": "Cardio",
+        "equipment": "Other"
+    },
+    {
+        "name": "Machine Lateral Shoulder Raise",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Seated Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Straight Arm Crossover",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Push Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Machine Leg Press (Narrow Stance)",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Spider Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Internal Rotation",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Bench Push-Up",
+        "body_part": "Chest",
+        "equipment": "Bench"
+    },
+    {
+        "name": "EZ Bar Curl (Reverse Grip)",
+        "body_part": "Forearms",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Stability Ball Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Barbell Bicep Curl (Wide Grip)",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Machine Single-Leg Press",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Bicep Curl (Reverse Grip)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Prisoner Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "V-Up",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Grip Lat Pulldown (Narrow Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Farmers Carry",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Iso Lateral High Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Crunch",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Bodyweight Sumo Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Weighted Side Bend",
+        "body_part": "Abs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Smith Machine Bent-Over Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Bench Press (Palms in)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Single-Leg Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable One-Arm Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Single-Leg Curl",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Pull-Up (Hammer Grip)",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Arm Circles",
+        "body_part": "Shoulders",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Machine Reverse T Bar Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Upper Chest Crossover",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Push-Up (Close Hand)",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Deep Push-Up",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Plank with Shoulder Taps",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Recumbent Bike",
+        "body_part": "Cardio",
+        "equipment": "Cardio Machine"
+    },
+    {
+        "name": "Machine Vertical Row (Close Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Pulldown (Underhand)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Hack Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Sumo Deadlift",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Reverse Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Pallof Press with Rotation",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Leg Pull-In",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Scissor Kick",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Pullover (Supine)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Glute Kickback",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Shrug",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Swimming",
+        "body_part": "Cardio",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Incline Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Leverage Machine Shrug",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Elevated Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Elevated Push-Up",
+        "body_part": "Chest",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Yoga",
+        "body_part": "Cardio",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Rope Seated Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Hamstring Curl",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Smith Machine Front Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Press (Close Grip)",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Wrist Curl (Palms Up)",
+        "body_part": "Forearms",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Rope Lat Pulldown",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Tricep Push-Up",
+        "body_part": "Triceps",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Alternating Preacher Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Superman",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dynamic Chest Stretch",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Weight Plate Rotation",
+        "body_part": "Abs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Smith Machine Bulgarian Split Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Rotational Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Dual Overhead Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Jackknife Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Jumping Jacks",
+        "body_part": "Cardio",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Seated Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Single-Leg Glute Bridge",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Incline Bench Press (Hammer Grip)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Trap Bar Deadlift",
+        "body_part": "Back",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell Inner Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cross Body Crunch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable One-Arm Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable One-Arm High Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Pull Through",
+        "body_part": "Glutes",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Push-Up (Wide Hand)",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Upper Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Rear Deltoid Row",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine Split Squat",
+        "body_part": "Glutes",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Hack Squat (Reverse Position)",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Single-Leg Curl",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Incline Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Side Bend",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Alternating Tricep Kickback",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "EZ Bar Close Grip Curl",
+        "body_part": "Biceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Smith Machine Deadlift",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Bench Leg Raise (Supine)",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "EZ Bar French Press",
+        "body_part": "Triceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Chin-Up (Close Grip)",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Dumbbell Wood Chop",
+        "body_part": "Abs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Quadricep Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Shoulder Stretch",
+        "body_part": "Shoulders",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Machine Assisted Chin-Up",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Preacher Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Toe Touches",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Decline Fly",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Reverse Crossover",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Bodyweight Side Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dual Cable Triceps Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Alternating Deltoid Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bench Hip Thrust",
+        "body_part": "Glutes",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Flutter Kick",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Smith Machine Reverse Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Bench Crunch",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Pendlay Row",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Kettlebell One-Arm Swing",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Field Sports",
+        "body_part": "Cardio",
+        "equipment": "Other"
+    },
+    {
+        "name": "Cable Standing Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Seated Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Overhead Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Burpee",
+        "body_part": "Cardio",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Bodyweight Rear Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Seated Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine Upright Row",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Inverted Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Smith Machine Bench Press (Close Grip)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Bench Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Bicep Curl (Reverse Grip)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Seated Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Weighted Trunk Rotation",
+        "body_part": "Abs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Cat Cow Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Rope Deltoid Row",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Single-Leg Calf Press",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Incline Bench Row",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Tricep Stretch",
+        "body_part": "Triceps",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Outdoor Hiking",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Glute Stretch",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Spider Curl",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Weighted Hanging Knee Raise",
+        "body_part": "Abs",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Aerobics",
+        "body_part": "Cardio",
+        "equipment": "Other"
+    },
+    {
+        "name": "Bodyweight Walking Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Tate Press",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Incline Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Rack Pull",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Around the World",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Curl (Close Grip)",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Hack Squat (Narrow Stance)",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cobra",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Standing Leg Curl",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "EZ Bar Incline Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Machine Lat Pulldown (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Side Bridge",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Front Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Cable Rear Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Smith Machine Decline Bench Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Extended Arm Child Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Reverse Hyper (Flat Bench)",
+        "body_part": "Glutes",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Decline Bench Weighted Twist",
+        "body_part": "Abs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Dumbbell Bent-Over Row (Palm in)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable One-Arm Tricep Pushdown (Reverse Grip)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Pelvic Tilt to Glute Bridge",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Incline Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Standing Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Split Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cat Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Wrist Curl (Palms Down)",
+        "body_part": "Forearms",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Seated Crunch",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Wrist Roller",
+        "body_part": "Forearms",
+        "equipment": "Other"
+    },
+    {
+        "name": "Cable Kneeling Crunch",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Rotational Crunch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Bench Press (Wide Grip)",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Machine Assisted Pull-Up (Hammer Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Preacher Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Landmine Kneeling One-Arm Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Ab Rollout",
+        "body_part": "Abs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Behind the Back Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell JM Press",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Decline Bench Leg Raise",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Mountain Biking",
+        "body_part": "Cardio",
+        "equipment": "Other"
+    },
+    {
+        "name": "Cable Decline Chest Fly",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Hip Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Bodyweight Step-Up",
+        "body_part": "Upper Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Sissy Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Flat Bench Fly",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Prone Incline Shrug",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine One-Arm Pulldown",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Shoulder Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Machine Inverted Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Upright Row",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Seated Alternating Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Cuban Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bodyweight Wall Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "One-Arm Hang",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Seated Floor Hamstring Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Seated Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Behind the Back Shrug",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Donkey Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Box Jumps",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell Supinated One-Arm Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kneeling Hip Flexor",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Pulldown Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Hammer Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Wall Calf Stretch",
+        "body_part": "Lower Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Weight Plate Shrug",
+        "body_part": "Back",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Barbell Single-Leg Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Wrist Curl (Pronated)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Plyo Push-Up",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Smith Machine Stiff-Leg Deadlift",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Kneeling Wrist Curl (Palms Up)",
+        "body_part": "Forearms",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Band Cross-Over",
+        "body_part": "Chest",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Side-Lying Hip Abduction",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Incline Bench Press (Palms in)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Seated Alternating Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Boxing",
+        "body_part": "Cardio",
+        "equipment": "Other"
+    },
+    {
+        "name": "Weighted Bench Dip",
+        "body_part": "Triceps",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Dragon Flag",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Barbell Rear Military Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "World's Greatest Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Push-Up to Side Plank",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Pullover on Stability Ball",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Trap Bar Shrugs",
+        "body_part": "Back",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell Lateral Raise (Prone)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bicep Stretch",
+        "body_part": "Biceps",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Seated Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Smith Machine Single-Leg Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell 3 Way Shoulder Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Farmer's Carry",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Cable One-Arm Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Bicep Drag Curl",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Tuck Crunch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Bench Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Reverse Grip Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Pullover",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Forearm Plank with Hip Abduction",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Figure Eight",
+        "body_part": "Abs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Clean and Jerk",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Preacher Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Drag Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Single-Leg Press",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Vertical Row (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Seated Press (Palms In)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Sumo High Pull",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Abdominal Pendulum",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Toe Touch Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Parallel Bar Hip Flexion",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Romanian Deadlift From Deficit",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Renegade Row",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Decline Bench Rotational Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Dumbbell One-Arm Preacher Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Band Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Barbell Hack Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Bench Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Chest and Shoulder Stretch",
+        "body_part": "Chest",
+        "equipment": "Other"
+    },
+    {
+        "name": "Dumbbell External Rotation",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Glute Bridge March",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "90/90 Hamstring Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Incline Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Hamstring Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Scorpion",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Smith Machine Rear Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "EZ Bar Tricep Extension (Close Grip)",
+        "body_part": "Triceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Kettlebell Thruster",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Rear Delt Row",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Decline Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Weight Plate Wall Sit",
+        "body_part": "Upper Legs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Dumbbell One-Arm Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Wrist Curl (Reverse Grip)",
+        "body_part": "Forearms",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Weight Plate Reverse Curl",
+        "body_part": "Biceps",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Medicine Ball Overhead Slam",
+        "body_part": "Abs",
+        "equipment": ""
+    },
+    {
+        "name": "Weight Plate Neck Flexion (Supine)",
+        "body_part": "Shoulders",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Barbell Preacher Curl (Overhand)",
+        "body_part": "Forearms",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Landmine Double Arm Row",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Bird Dog Elbow to Knee",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Band Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Bench Leg Pull-In",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Cable Oblique Crunch",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Clean Deadlift",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Bench Press (Reverse Grip)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Incline Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Incline Fly With A Twist",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Seated Row to Neck",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Iron Cross Stretch",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Walking High Knees",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Bent-Over Lateral Pulley",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Standing Trunk Rotation",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Pilates",
+        "body_part": "Cardio",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Reverse Wood Chop",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Trap Bar Romanian Deadlift",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Barbell Lateral Lunge",
+        "body_part": "Glutes",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Push Press Behind the Neck",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Preacher Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Jump Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Incline Pulldown (Supine)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Rope Pullover (Supine)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Band Alternating Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Dumbbell Reverse Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Rope Row to Neck",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Seated Single-Leg Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Handstand Push-Up",
+        "body_part": "Shoulders",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Front to Back Leg Swings",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Overhead Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Bent-Over Row (Palms in)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Single-Leg Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Tricep Kickback",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Kettlebell Row",
+        "body_part": "Back",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Squat (Wide Stance)",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Smith Machine Good Morning",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Knees to Chest Hug",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Bent-Over Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Incline Row (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Front Incline Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Clean",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable V-Bar Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Downward Facing Dog",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Plank with Alternating Knee Drive",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Bicep Curl (Supine)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Rear Pull-Up (Wide Grip)",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Split Jump",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Straddle Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Incline Spider Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Abdominal Hip Roll",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Seated Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Kettlebell Pistol Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Incline Bench Press (Close Grip)",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Seated Wrist Curl (Palms Down)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Deadlift",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Machine Unilateral Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Side to Side Leg Swings",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Pull-In",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Barbell Step-Up",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Trap Bar Squat",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Stability Ball Hamstring Curl to Bridge",
+        "body_part": "Glutes",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dynamic Back Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Crunch Kneeling Rotation",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Seated Bench Leg Pull-In",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Cable Seated Rotation (Stability Ball)",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Bicep Curl (Supine)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Weight Plate High Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Stability Ball Trunk Rotation",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Barbell Drag Curl",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Alternating Arnold Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Hanging Knee Raise Rotation",
+        "body_part": "Abs",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Single-Leg Push-Up",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Zercher Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Alternating Floor Leg Raise",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Seated Dublin Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Decline Bench Ab Reach",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Wide Leg Stretch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Lateral Stretch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Seated Alternating Arnold Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Squat to Shoulder Press",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell One-Arm Row",
+        "body_part": "Back",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Upward Facing Dog",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Push Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Rear Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Kneeling Wrist Curl (Palms Down)",
+        "body_part": "Forearms",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "EZ Bar Bent-Over Row (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Cable One-Arm Reverse Curl",
+        "body_part": "Forearms",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Alternating Kickback",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Tricep Press (Close Grip)",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Side Plank Hip Abduction",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Alternating Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Deltoid Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell High Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Weight Plate Neck Extension (Prone)",
+        "body_part": "Shoulders",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Dumbbell Seated Single-Leg Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Wrist Curl (Neutral Grip)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Weight Plate Hand Squeeze",
+        "body_part": "Forearms",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Dumbbell Single-Leg Cobra",
+        "body_part": "Abs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Weighted Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Frog Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Shoulder Rotation",
+        "body_part": "Shoulders",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Modified Push-Up to Forearms",
+        "body_part": "Forearms",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Hip Adduction",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cross-Leg Side Stretch (Supine)",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Decline Reverse Crunch",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Ab Roll",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Tricep Extension (Supine)",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Tricep Press (Supine)",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Decline Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bent Knee Hip Raise",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Incline Alternating Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Shoulder Circles",
+        "body_part": "Shoulders",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Alternating Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Upper Back Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Boat Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Seated Front Raise (Hammer)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Cross Tricep Extension (Supine)",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kneeling Forearm Stretch",
+        "body_part": "Forearms",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Hip Flexor Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Seated Hamstring Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Tricep Kickback",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Leg Raise with Hip Thrust",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Kettlebell One-Arm Snatch",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Dumbbell Single-Leg Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Back Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Incline Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Suitcase Carry",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Incline Chest Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Back Bend",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Decline Oblique Crunch",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Upward Stretch",
+        "body_part": "Shoulders",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Band Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Leg Swing",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Child's Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Single-Leg Bench Dip",
+        "body_part": "Triceps",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Cable One-Arm Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Landmine Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Reverse Bench Press (Wide Grip)",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Seated Twist",
+        "body_part": "Abs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Decline Bench Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Straight Arm Plank",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Hammer Curl to Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable One-Arm Rotational Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Seated Good Morning",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable One-Arm Concentration Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Back Extension (Prone)",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Alternating Floor Press",
+        "body_part": "Chest",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Smith Machine Bench Press (Wide Grip)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "EZ Bar Seated Curl (Close Grip)",
+        "body_part": "Biceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Dumbbell Seated One-Arm Supported Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Decline Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Thoracic Spine Extension (Foam Roller)",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Alternating Leg Bridge",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell One-Arm Push Press",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Cable One-Arm Preacher Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Landmine One-Arm Row",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Band Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Dumbbell Rotational Row",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Windmill",
+        "body_part": "Abs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Hang Clean",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Reverse Lunge Crossover",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Ab Draw Leg Slide",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Lateral Raise (Side-Lying)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Ankle Circles",
+        "body_part": "Lower Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Kneeling Squat",
+        "body_part": "Glutes",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Hanging Pike",
+        "body_part": "Abs",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Cable Incline Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell One-Arm Row",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Side Jacknife",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Shell Stretch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Chin-Up (Mixed Grip)",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Machine Landmine Row (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Reverse Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Plank",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Wrist Circles",
+        "body_part": "Forearms",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Box Jump Multiple Response",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell Reverse Fly with External Rotation",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Rocking Standing Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Single-Leg Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Hip Abduction",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Alternating Reverse Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Alternating Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Band Hip Lift",
+        "body_part": "Glutes",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Assisted Hyperextension",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Side Split Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Sphinx",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Knee to Chest (Supine)",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Renegade Row",
+        "body_part": "Back",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Exercise Dome Push-Up",
+        "body_part": "Chest",
+        "equipment": ""
+    },
+    {
+        "name": "Trap Bar Overhead Press",
+        "body_part": "Shoulders",
+        "equipment": ""
+    },
+    {
+        "name": "Stability Ball Dumbbell Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Clap Push-Up",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Side Step-Up",
+        "body_part": "Upper Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Band Upright Row",
+        "body_part": "Shoulders",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Smith Machine Bent-Over Row (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Concentration Curl on Stability Ball",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Stability Ball Pike Push-Up",
+        "body_part": "Chest",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Posterior Capsule Stretch",
+        "body_part": "Shoulders",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Rear Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Windshield Wipers",
+        "body_part": "Abs",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Cable One-Arm Side Bend",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Crunch with Hands Overhead",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kneeling Hip Flexor",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Posterior Lower Leg Stretch",
+        "body_part": "Lower Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Tricep Kickback (Reverse Grip)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Smith Machine Shoulder Press (Wide Grip)",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Seated Overhead Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Tricep Side Stretch",
+        "body_part": "Triceps",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Alternating Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Smith Machine Deltoid Row",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Wall Squat Hold",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Push-Up",
+        "body_part": "Chest",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Dumbbell Lateral Lunge with Bicep Curl",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bench Oblique Crunch",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Cable Lying Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Rotational Decline Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine Toe Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Squat with Narrow Stance",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Alternating Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Child Pose Side Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Snatch Deadlift",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Kneeling Thoracic Mobility",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kneeling Hip Extension",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Rotational Bench Press",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Weight Plate Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Calf Raise On A Dumbbell",
+        "body_part": "Lower Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Snatch Shrug",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Seated One-Arm Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Alternating Row",
+        "body_part": "Back",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Overhead Stretch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "EZ Bar Preacher Curl (Reverse Grip)",
+        "body_part": "Forearms",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Cable Rope Seated Crossover Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Reverse Crunch",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Kettlebell Military Press",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Bench Plank",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Dumbbell Fly (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Climber Pull-Up",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Stability Ball Hip Thrust",
+        "body_part": "Glutes",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Plyo Box Step-Ups",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Cable Chest Press (Supine Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "V Bar Pull-Up",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Cable Seated Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Stability Ball Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Kettlebell Dead Clean",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Pin-Off Good Morning",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Seated Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Russian Twist (Stability Ball)",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Weighted Drop Push-Up",
+        "body_part": "Chest",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Dumbbell Seated Alternating Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Rope One-Arm Preacher Curl (Hammer)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Decline Bench Press (Wide Grip)",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Seated One-Arm Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Seated Twist",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "All Fours Quad Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Calf Machine Shoulder Shrug",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Incline Shoulder Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Hip Raise",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Runner's Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Alternating Reach and Catch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Reverse Fly (Prone)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell One-Arm Military Press",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Band Upright Row",
+        "body_part": "Back",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Barbell Overhead Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Hundreds",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Seated Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Incline Bench Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell See Saw Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Pullover and Press",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Weight Plate Sissy Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Band Good Morning",
+        "body_part": "Upper Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Dumbbell Dublin Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bear Crawl",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Back Extension",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Cable Squat Curl",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Incline Bench Pull",
+        "body_part": "Back",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Cable Overhead Raise (Supine)",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Press Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Roll Down",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Alternating Preacher Curl (Hammer)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Lying Alternating Knee Raise",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Single-Leg Hack Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Push-up to Renegade Row",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Bradford Rocky Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Upward Chop",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Smith Machine Decline Bench Press (Close Grip)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Iron Cross",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Seated Wrist Curl (Neutral Grip)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine Hack Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Inchworm",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Squat to Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Alternating Bent-Over Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Seated One-Arm Lateral Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Band Bench Press",
+        "body_part": "Chest",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Rocket Jump",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Reverse Tricep Bench Press",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Upright Row",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Cambered Row (Prone)",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Reverse Preacher Curl",
+        "body_part": "Forearms",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Gironda Sternum Pull-Up",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Dumbbell One-Arm Hammer Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Leg Pass",
+        "body_part": "Abs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "High Knee Skip",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Decline Bench Leg Raise with Hip Thrust",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Smith Machine Shoulder Press (Close Grip)",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Kettlebell One-Arm Floor Press",
+        "body_part": "Chest",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Dumbbell One-Arm Tricep Extension (Pronated)",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Single-Leg Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Seated Rotation",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Tricep Extension (Supinated)",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Quadricep Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "EZ Bar Seated Reverse Grip French Press",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Front Raise Pullover",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Side-Lying Thoracic Rotation",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Rear Row (Prone)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Isometric Chest Press",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Reverse Bench Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cross Leg Erector Spinae",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Hand and Foot Exchange",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Incline Hammer Curl (Prone)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Tricep Extension (Reverse Grip)",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Trap Bar Farmer’s Walk",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Knee to Chest to Leg Raise",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable One-Arm Incline Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Wall Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kneeling Lat Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell 1/2 Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Kettlebell Turkish Get-Up Squat",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Band Hamstring Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Cable Rotational Crunch (Kneeling)",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Posterior Tibialis Stretch",
+        "body_part": "Lower Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Cable Kneeling Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "EZ Bar French Press (Reverse Grip)",
+        "body_part": "Triceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Stability Ball Leg Lift",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Push-Up",
+        "body_part": "Chest",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Forward Step-Up",
+        "body_part": "Upper Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Cable Bicep Curl (Supine Close Grip)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Kettlebell Advanced Windmill",
+        "body_part": "Abs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Incline Bench Press (Reverse Grip)",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Weighted Decline Rotation",
+        "body_part": "Abs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Barbell Squat to Shoulder Press",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Concentration Curl (Close Grip)",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Smith Machine Decline Bench Press (Wide Grip)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Decline Bench Knee Raise",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Cable Rope Incline Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Seated Bent-Over Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Split Jump",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Curl Against an Incline",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "One-Arm Wall Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Wall Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Hanging Knee Raise (Rotational)",
+        "body_part": "Abs",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Dumbbell Single-Leg Bench Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Rotation (Stability Ball)",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Half Kneeling Psoas Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Weight Plate Pinch",
+        "body_part": "Forearms",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Dumbbell One-Arm Pullover (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Knee Circles",
+        "body_part": "Lower Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Power Clean from Blocks",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Squat Curl to Shoulder Press",
+        "body_part": "Upper Legs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Shrug (Stability Ball)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Hang Clean",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Cable Incline Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Star Jump",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Long Jump",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Smith Machine Incline Bench Press (Reverse Grip)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Pullover (Stability Ball)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bent Knee Hundreds",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Rope Preacher Curl (Hammer)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Incline Shoulder Raise",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Smith Machine Bench Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Shoulder Press (Reverse Grip)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Fly",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Decline One-Arm Chest Fly",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Reverse Concentration Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Janda Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Seated Alternating Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Scalene Stretch",
+        "body_part": "Other/Misc",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Snatch",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Medicine Ball Rotation",
+        "body_part": "Abs",
+        "equipment": ""
+    },
+    {
+        "name": "Table Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Standing Hamstring and Calf Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Quadricep Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Trap Bar Bent-over Rows",
+        "body_part": "Back",
+        "equipment": ""
+    },
+    {
+        "name": "EZ Bar Decline Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "EZ Curl Bar"
+    },
+    {
+        "name": "Kettlebell One-Arm Clean and Jerk",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Smith Machine Incline Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Kettlebell Turkish Get-Up Lunge",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Cable Upright Row (Supine)",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Side Plank Crunch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Lying Crunch",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Row (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Inchworm Push-Up",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Seated Hammer Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Bicep Curl (Supine Wide Grip)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Single-Leg Reverse Hyper (Flat Bench)",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Barbell Rear Delt Row to Neck",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Leg Slide",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Incline Push-Up Depth Jump",
+        "body_part": "Chest",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Smith Machine Incline Shoulder Raise",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Stability Ball Incline Ab Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Single-Leg Donkey Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Dumbbell Incline One-Arm Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Bridge",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "High Knee Walk External Hip Rotation",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Smith Machine Behind the Back Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Weighted Side Rotation",
+        "body_part": "Abs",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Knee Across the Body",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Push Press",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Forward Lunge with Rotation",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Seated Side Bend",
+        "body_part": "Abs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Decline Pullover",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell French Press (Stability Ball)",
+        "body_part": "Triceps",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Smith Machine Bench Press (Reverse Grip)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Side-Lying Hip Flexor",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Kneeling Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Posterior Fly on Stability Ball",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Bent-Over Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable High Curl (Supine)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Kettlebell Clean",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Bench Rotational Crunch",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Walking Inchworm Push-Up",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Rope Incline Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cross-Legged Forward Fold",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Spiderman Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Seated Shrug",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Straight Leg Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Neck Press",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Rolling",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Bow Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Spider Curl (Prone)",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Weight Plate One-Arm Shrug",
+        "body_part": "Back",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Dumbbell Pronation (Side-Lying)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Heel Walking",
+        "body_part": "Lower Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Sun Salutation",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Forward Lunge with Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Shoulder Raise (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Knee Tuck Jump",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Diagonal Plate Raise",
+        "body_part": "Shoulders",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Soleus and Achilles Stretch",
+        "body_part": "Lower Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Decline Chest Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Seated Bent-Over One-Arm Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Jerk",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Stability Ball Medicine Ball Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Barbell Round the World Shoulder Stretch",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Band Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Rocky Pull-Up",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Barbell Side Bend",
+        "body_part": "Abs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Power Snatch",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable One-Arm Fly (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Wrist Curl Over Bench (Neutral)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Seated Glute Stretch",
+        "body_part": "Glutes",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm French Press (Stability Ball)",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Arnold Press",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Reach and Catch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Weight Plate Pullover",
+        "body_part": "Triceps",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Barbell Stiff-Leg Deadlift (Bench)",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Single-Leg Knee Raise",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Arnold Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Hack Single-Leg Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Shoulder Press (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Three Bench Dip",
+        "body_part": "Triceps",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Box Side to Side Shuffle",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Barbell High Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Stiff-Leg Deadlift (Wide Stance)",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Clean Pull",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Stability Ball Back Stretch",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Kneeling Back Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Incline Row (Reverse Grip)",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell One-Arm Floor Press",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Rope Pull-Up",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Bench Jackknife Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Barbell Alternating Front and Back Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Stability Ball Oblique Curl",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Locust Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Downward Facing Puppy Dog",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Rope Tricep Extension (Supine)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Reverse Grip Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Decline Pullover",
+        "body_part": "Shoulders",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Supine Reverse Extension",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Stability Ball V-Up",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Band Seated Calf Stretch",
+        "body_part": "Lower Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Dumbbell Stiff-Leg Deadlift on Bench",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Single-Leg Stance",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Decline Bench Press (Reverse Grip)",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable Low Tricep Extension (Supine)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Knee Raise (Supine)",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Warrior 2 Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Neck Press",
+        "body_part": "Chest",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Smith Machine Front Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Kettlebell Hang Clean",
+        "body_part": "Forearms",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Weighted Three Bench Dip",
+        "body_part": "Triceps",
+        "equipment": "Weight Plate"
+    },
+    {
+        "name": "Dumbbell Incline Press on Stability Ball",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Incline One Arm Hammer Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine Reverse Bench Press (Close Grip)",
+        "body_part": "Triceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Inline Skating",
+        "body_part": "Cardio",
+        "equipment": "Other"
+    },
+    {
+        "name": "Box Single-Leg Push-Off",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell One-Arm Press (Palms In)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Medicine Ball Overhead Throw",
+        "body_part": "Shoulders",
+        "equipment": ""
+    },
+    {
+        "name": "Barbell Shoulder Pull (Prone)",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Kettlebell Snatch",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Gorilla Chin-Up with Crunch",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Dumbbell One-Arm Reverse Preacher Curl",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Warrior Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Band Sit-Up",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Reverse Lunge with Rotation",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Reverse Spider Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Rack Delivery",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Side Angle Pose With Rotation",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Deadlift to Bicep Curl",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Double Leg Stretch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Smith Machine Single-Leg Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Cable Judo Flip",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Single-Leg Butt Kick",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Alternating Press (Palms In)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine One-Arm Row",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Pin Press",
+        "body_part": "Triceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Supination (Side-Lying)",
+        "body_part": "Forearms",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine Zercher Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Kettlebell One-Arm Overhead Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Hang Snatch",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Kettlebell One-Arm Para Press",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Depth Jump Leap",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Trap Bar Jump Squat",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell Lateral Raise (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Hero Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Bent-Over Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Single-Leg Box Jump",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Side Hop-Sprint",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Hammer Shoulder Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Side Wrist Pull",
+        "body_part": "Shoulders",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Medicine Ball Chest Throw (Supine)",
+        "body_part": "Triceps",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell Bicep Curl Step-Up",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Band Quad Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Single-Leg Wall Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Camel Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell One-Arm Floor Press",
+        "body_part": "Chest",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Low Back Chair Stretch",
+        "body_part": "Back",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Depth Jumps",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Stability Ball Side Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Barbell Kneeling Jump Squat",
+        "body_part": "Glutes",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Lateral High Knee Skip",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Warrior 3 Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Floor Press",
+        "body_part": "Chest",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Crescent Moon Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Roman Twist",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Cable Fly",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Drop Push-Up",
+        "body_part": "Chest",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Cable Rotational Crunch (Supine)",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Jefferson Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Alternating Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Incline One-Arm Fly",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Burpee Box Jump Overs",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell Bicep Curl With Stork Stance",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Jack Knife Push-Up",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Weighted Wall Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Barbell Speed Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Snatch Pull",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Squat to Upright Row",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Depth Box Jumps",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell Seated One-Arm Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell One-Arm Side Deadlift",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Stability Ball Weighted Hyperextension",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Single-Leg Stride Jump",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Seated One-Arm Arnold Press",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Alternating Arm Cobra",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Seated Wide Angle Pose",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Medicine Ball Two-Arm Overhead Throw",
+        "body_part": "Abs",
+        "equipment": "Other"
+    },
+    {
+        "name": "Assisted Chest Stretch",
+        "body_part": "Chest",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Bent Press",
+        "body_part": "Abs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Standing Pelvic Tilt",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Decline Bench Cable Crunch",
+        "body_part": "Abs",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell Decline Pullover (Wide Grip)",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Box Jump with Single-Leg Stabilization",
+        "body_part": "Lower Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Decline Bench Alternating Leg Raise",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Dumbbell One-Arm Lateral Raise (Prone)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Hip Rotation",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Incline Hammer Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Lunge Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "One-Knee to Chest (Supine)",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Bicep Curl (Prone)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Reverse Preacher Curl",
+        "body_part": "Forearms",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Barbell One-Arm Row",
+        "body_part": "Back",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Decline Bench Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Stability Ball Neck Flexion",
+        "body_part": "Shoulders",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Crow Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Medicine Ball One-Arm Push-Up",
+        "body_part": "Chest",
+        "equipment": ""
+    },
+    {
+        "name": "Barbell One-Arm Bicep Curl",
+        "body_part": "Biceps",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Alternating Bicep Curl (Stability Ball)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Seated Press",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Cable One-Arm Preacher Curl (Reverse)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Towel Tricep Extension",
+        "body_part": "Triceps",
+        "equipment": "Other"
+    },
+    {
+        "name": "Band Calf Raise",
+        "body_part": "Lower Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Medicine Ball Chest Pass",
+        "body_part": "Chest",
+        "equipment": ""
+    },
+    {
+        "name": "Bench Calf Stretch",
+        "body_part": "Lower Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Calf Stretch with Rope",
+        "body_part": "Lower Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Seated Box Jumps",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Barbell Alternating Press",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Seated Hamstring and Calf Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Barbell Seated Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Kettlebell Double Windmill",
+        "body_part": "Abs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Lateral Box Jump Overs",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell One-Arm Press (Reverse Grip)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Medicine Ball Chest Push",
+        "body_part": "Chest",
+        "equipment": ""
+    },
+    {
+        "name": "Weighted Box Jump",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Triangle Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Bench Leg and Hip Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Side-Lying Quadricep Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Leg Slide",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Incline Fly (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Preacher Curl (Stability Ball)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Medicine Ball Catch and Throw",
+        "body_part": "Back",
+        "equipment": "Other"
+    },
+    {
+        "name": "Barbell 1/4 Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Hang Clean Below the Knees",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Split Jump",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Arnold Press (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine Decline Bench Press (Reverse Grip)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Alternating Reverse Hyper (Flat Bench)",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Standing Opposition Reach",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Hip Extension",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Incline Fly (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Rear Row (Stability Ball)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Smith Machine Wrist Curl",
+        "body_part": "Forearms",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Trap Bar Lunges",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Peroneal Stretch",
+        "body_part": "Lower Legs",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Bent Knee Side Angle Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Lat Stretch",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Leg Slide (Supine)",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Neck Extension",
+        "body_part": "Shoulders",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Fish Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell High Snatch",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Stability Ball Plank with Hip Abduction",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Chest Stretch",
+        "body_part": "Chest",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell One-Arm Reverse Spider Curl",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Hamstring Contract Relax",
+        "body_part": "Upper Legs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Alternating Reverse Fly (Prone)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Standing Half Moon",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Split Jerk",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell Open Palm Clean",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Kettlebell Alternating Press",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Dumbbell Tricep Kickback with Stork Stance",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Dual Overhead Curl (Stability Ball)",
+        "body_part": "Biceps",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Walking Quadricep Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Side-Lying Neck Stretch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Double-Leg Butt Kick",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Head Tilt",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Shoulder Raise (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Eagle Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Hammer Curl on Stability Ball",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kneeling Warrior Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Ab Curl",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell One-Arm Reverse Fly",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Shrug (Supine)",
+        "body_part": "Back",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Hammer Curl (Prone)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Downward Facing Dog Single-Leg",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Mighty Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kneeling Side Bend",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Cable Decline One-Arm Press",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Stability Ball Full Body Plank",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Alternating Diagonal Leg Bound",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Kettlebell Jerk",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Half Locust",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Passive Opening Twist",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Single-Leg Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Walking Lunge",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Balance",
+        "body_part": "Chest",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Dip",
+        "body_part": "Triceps",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Band Shoulder Press (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Bands"
+    },
+    {
+        "name": "Dumbbell Lunge with Bicep Curl Bowling Motion",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Decline One-Arm Fly",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Sage Twist 1",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Staff Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Alternating Cobra (Stability Ball)",
+        "body_part": "Abs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Weight Plate Side Bend",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Revolved Abdomen Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Snatch Balance",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Stability Ball Side Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Narrow Push-Up",
+        "body_part": "Chest",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Straight Leg Walk",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Turtle Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Double Leg Hundreds",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Medicine Ball Decline Two-Arm Overhead Throw",
+        "body_part": "Abs",
+        "equipment": ""
+    },
+    {
+        "name": "Dumbbell One-Arm Hammer Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Z Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Hip Roll",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Alternating Hammer Curl (Stability Ball)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Wood Chop",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Upper Body Chair Stretch",
+        "body_part": "Shoulders",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Dumbbell Alternating Row (Stability Ball)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Seated High Front Raise",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Cable One-Arm Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell Alternating Shoulder Press (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Seated Trunk Rotation",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Back Extension with Hands Behind Head",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Kneeling Bicep Curl (Stability Ball)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Warrior High Lunge",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Barbell Frankenstein Squat",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Single-Leg Bicep Curl on Stability Ball",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Decline Bench Alternating Knee Raise",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Kettlebell One-Arm Palm Clean",
+        "body_part": "Upper Legs",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Dumbbell Decline One-Arm Hammer Press",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "One-Arm Chin-Up",
+        "body_part": "Back",
+        "equipment": "Pullup Bar"
+    },
+    {
+        "name": "Stability Ball Standing Hamstring Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Alternating Lateral Raise (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Broad Jump to Box Jump",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Rotational Step-Up",
+        "body_part": "Upper Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Stability Ball Wall Circles",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Dumbbell Kickback",
+        "body_part": "Triceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Bicep Curl on Dome",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Decline Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Bench Quad Stretch (Supine)",
+        "body_part": "Upper Legs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Child's Pose (Stability Ball)",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Upward Facing Bow Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Extended Arm Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Side-Lying Floor Stretch",
+        "body_part": "Back",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Alternating Arnold Press (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Cable One-Arm Incline Fly (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Box Jump Tap Overs",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Hare Pose",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Shoulder Press (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Low Back Stretch",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell One-Arm Bicep Curl on Stability Ball",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Cobra (Stability Ball)",
+        "body_part": "Abs",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Power Jerk",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell Bicep Curl on Stability Ball",
+        "body_part": "Biceps",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Stork Stance",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Reverse Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Kneeling Lateral Raise (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Carioca",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell One-Arm Fly (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Kettlebell One-Arm Split Snatch",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Power Snatch From Blocks",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Seated Overhead Stretch",
+        "body_part": "Abs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Stability Ball Reverse Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Back Extension",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Hamstring Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell One-Arm Row (Stability Ball)",
+        "body_part": "Back",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Single-Leg Bridge",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell One-Arm Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable One-Arm Incline Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Dumbbell One-Arm Lateral Raise (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Back Stretch",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Rollover",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Medicine Ball Throw (Stability Ball)",
+        "body_part": "Abs",
+        "equipment": ""
+    },
+    {
+        "name": "Kneeling Jump to Box Jump",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Reclining Big Toe Pose",
+        "body_part": "Upper Legs",
+        "equipment": "Body Weight"
+    },
+    {
+        "name": "Dumbbell Alternating Posterior Fly (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Cable Incline Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Strength Machine"
+    },
+    {
+        "name": "Medicine Ball Bicep Curl on Stability Ball",
+        "body_part": "Biceps",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Kettlebell Alternating Hang Clean",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Decline Bench Cable Knee Raise",
+        "body_part": "Abs",
+        "equipment": "Bench"
+    },
+    {
+        "name": "Stability Ball Hamstring Stretch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Side Bend",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Kettlebell Jerk",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Stability Ball Shoulder Flexion",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Roll Down",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Cross-Leg Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Medicine Ball Chest Push from Stance",
+        "body_part": "Chest",
+        "equipment": ""
+    },
+    {
+        "name": "Kettlebell One-Arm Jerk",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Barbell Press on Stability Ball",
+        "body_part": "Shoulders",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Hang Snatch Below the Knees",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Kettlebell One-Arm Split Jerk",
+        "body_part": "Shoulders",
+        "equipment": "Kettlebell"
+    },
+    {
+        "name": "Stability Ball Back Extension with Knees Off Ground",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Quadricep Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Single-Leg Hip Rotation",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Staggered Stance Box Jump",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Medicine Ball Box Jump",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Stability Ball Straight-Leg Crunch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Incline One-Arm Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Dumbbell Single-Leg Fly (Stability Ball",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Barbell Clean From Blocks",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Jerk Dip Squat",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Dumbbell One-Arm Posterior Fly on Stability Ball",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Back Extension with Rotation",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Hundreds",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Hip Flexor Stretch",
+        "body_part": "Upper Legs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Medicine Ball Chest Push to Run",
+        "body_part": "Chest",
+        "equipment": ""
+    },
+    {
+        "name": "Stability Ball Cross-Leg Bridge",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Alternating Bicep Curl (Stability Ball)",
+        "body_part": "Biceps",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Back Stretch",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball Half Moon Stretch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell One-Arm Arnold Press (Stability Ball)",
+        "body_part": "Shoulders",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Hamstring Stretch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Incline One-Arm Hammer Press (Stability Ball)",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Stability Ball Lat Stretch",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Dumbbell Incline One-Arm Fly on Stability Ball",
+        "body_part": "Chest",
+        "equipment": "Dumbbell"
+    },
+    {
+        "name": "Push-Up to Box Jump",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Depth Jump to Tuck Jump",
+        "body_part": "Upper Legs",
+        "equipment": ""
+    },
+    {
+        "name": "Stability Ball Hug",
+        "body_part": "Back",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Stability Ball One-Arm Bridge",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Barbell Snatch from Blocks",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Medicine Ball Decline One-Arm Overhead Throw",
+        "body_part": "Abs",
+        "equipment": ""
+    },
+    {
+        "name": "Barbell One-Arm Snatch",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Stability Ball Tricep Stretch",
+        "body_part": "Triceps",
+        "equipment": "Exercise Ball"
+    },
+    {
+        "name": "Barbell Split Clean",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Barbell Squat Jerk",
+        "body_part": "Upper Legs",
+        "equipment": "Barbell"
+    },
+    {
+        "name": "Medicine Ball One-Arm Overhead Throw",
+        "body_part": "Abs",
+        "equipment": "Other"
+    },
+    {
+        "name": "Stability Ball Side Stretch",
+        "body_part": "Abs",
+        "equipment": "Exercise Ball"
+    }
+]

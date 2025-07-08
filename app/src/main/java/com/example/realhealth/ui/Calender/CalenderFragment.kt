@@ -57,6 +57,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
@@ -184,11 +186,14 @@ fun MainAppCalender() {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top,
-            modifier = Modifier.fillMaxSize().background(color = Color.White)
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = Color.White)
         ) {
             Box(modifier = Modifier.height(10.dp))
             Box(
-                modifier = Modifier.shadow(elevation = 10.dp, shape = RoundedCornerShape(17.dp))
+                modifier = Modifier
+                    .shadow(elevation = 10.dp, shape = RoundedCornerShape(17.dp))
                     .clip(RoundedCornerShape(17.dp))
             ) {
                 CalenderMain(
@@ -237,7 +242,9 @@ fun Tab3TodoList(currentDate: String, ContentList: List<todo>, modifier: Modifie
 @Composable
 fun Tab3Todo(textcontent: todo, modifier: Modifier = Modifier, delete: (todo) -> Unit) {
     Box(
-        modifier = Modifier.width(330.dp).height(129.dp)
+        modifier = Modifier
+            .width(330.dp)
+            .height(129.dp)
             .shadow(3.dp, RoundedCornerShape(10.dp))
             .clip(RoundedCornerShape(10.dp))
             .background(color = Color(0xFFE9F5FE))
@@ -432,6 +439,8 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
     var ShowCategories by remember { mutableStateOf(false) }
     var ShowExercises by remember { mutableStateOf(false) }
 
+    val focusRequester = remember { FocusRequester() }
+
     val CategoryUpdate = { NewCategory: String ->
         if (textboxCategory != NewCategory) {
             textboxCategory = NewCategory
@@ -469,6 +478,9 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
         textboxCategory = ""
         textboxExercise = ""
         textboxNotes = ""
+        ShowEquips = false
+        ShowCategories = false
+        ShowExercises = false
     }
 
     val view = LocalView.current
@@ -606,7 +618,8 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                         modifier = Modifier.height(2.dp)
                     ) {
                         Box(
-                            modifier = Modifier.height(2.dp)
+                            modifier = Modifier
+                                .height(2.dp)
                                 .width(347.dp)
                                 .clip(RoundedCornerShape(1.dp))
                                 .background(color = Color(0xFFCCCCCC))
@@ -619,7 +632,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                             fontSize = 22.sp,
                             color = Color(0xFF2196F3),
                             fontWeight = FontWeight.SemiBold,
-                            text = "Equipment",
+                            text = "기구/장비",
                         )
                         Box(modifier = Modifier.weight(1f))
                     }
@@ -657,7 +670,9 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                 )
                             }
                             Box(
-                                modifier = Modifier.width(30.dp).height(30.dp)
+                                modifier = Modifier
+                                    .width(30.dp)
+                                    .height(30.dp)
                             ) {
                                 Text(
                                     text = " ↓ ",
@@ -680,7 +695,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                     fontSize = 22.sp,
                                     color = Color(0xFF2196F3),
                                     fontWeight = FontWeight.SemiBold,
-                                    text = "Category"
+                                    text = "부위"
                                 )
                                 Box(modifier = Modifier.weight(1f))
                             }
@@ -718,7 +733,9 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                         )
                                     }
                                     Box(
-                                        modifier = Modifier.width(30.dp).height(30.dp)
+                                        modifier = Modifier
+                                            .width(30.dp)
+                                            .height(30.dp)
                                     ) {
                                         Text(
                                             text = " ↓ ",
@@ -740,7 +757,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                             fontSize = 22.sp,
                                             color = Color(0xFF2196F3),
                                             fontWeight = FontWeight.SemiBold,
-                                            text = "Exercises",
+                                            text = "운동",
                                         )
                                         Box(modifier = Modifier.weight(1f))
                                     }
@@ -757,20 +774,53 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                     ShowExercises = !ShowExercises
                                                     ShowEquips = false
                                                     ShowCategories = false
+                                                    if (ShowExercises) focusRequester.requestFocus()
+                                                    else focusManager.clearFocus()
                                                 }
                                             }
                                     ) {
                                         Row(
-                                            horizontalArrangement = Arrangement.Center
+                                            horizontalArrangement = Arrangement.Center,
                                         ) {
                                             Text(
                                                 text = " ",
                                                 fontSize = 20.sp,
-                                                textAlign = TextAlign.Left
+                                                textAlign = TextAlign.Left,
                                             )
                                             Box(
                                                 modifier = Modifier.weight(1f)
                                             ) {
+                                                BasicTextField(
+                                                    value = textboxExercise,
+                                                    onValueChange = { textboxExercise = it },
+                                                    textStyle = TextStyle(
+                                                        fontSize = 20.sp,
+                                                        textAlign = TextAlign.Left,
+                                                        color = Color(0xFF949494),
+                                                    ),
+                                                    decorationBox = { innerTextField ->
+                                                        Box() {
+                                                            if (textboxExercise.isEmpty()) {
+                                                                Text(
+                                                                    text = "",
+                                                                    fontSize = 20.sp,
+                                                                    textAlign = TextAlign.Left,
+                                                                    color = Color(0xFF949494),
+                                                                )
+                                                            }
+                                                            innerTextField()
+                                                        }
+                                                    },
+                                                    singleLine = true,
+                                                    keyboardActions = KeyboardActions(
+                                                        onDone = {
+                                                            focusManager.clearFocus()
+                                                        }
+                                                    ),
+                                                    modifier = Modifier
+                                                        .align(Alignment.CenterStart)
+                                                        .focusRequester(focusRequester)
+                                                )
                                                 Text(
                                                     text = textboxExercise,
                                                     fontSize = 20.sp,
@@ -778,7 +828,9 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                 )
                                             }
                                             Box(
-                                                modifier = Modifier.width(30.dp).height(30.dp)
+                                                modifier = Modifier
+                                                    .width(30.dp)
+                                                    .height(30.dp)
                                             ) {
                                                 Text(
                                                     text = " ↓ ",
@@ -802,7 +854,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                     fontSize = 22.sp,
                                                     color = Color(0xFF2196F3),
                                                     fontWeight = FontWeight.SemiBold,
-                                                    text = "Notes"
+                                                    text = "노트"
                                                 )
                                                 Box(modifier = Modifier.weight(1f))
                                             }
@@ -1017,11 +1069,21 @@ fun ShowExercisesElegantly(Equipment: String, Category: String, currentExercise:
 
     var exercisesList by remember { mutableStateOf(exercises) }
 
-    if (Equipment.length > 1) {
-        exercisesList = exercises.filter { it.equipment == Equipment }
-    }
-    if (Category.length > 1) {
-        exercisesList = exercises.filter { it.body_part == Category }
+    exercisesList = exercises.filter {
+        if (Equipment != "") {
+            it.equipment == Equipment
+        } else true
+    }.filter {
+        if (Category != "") {
+            it.body_part == Category
+        } else true
+    }.filter {
+        if (it.name.length >= currentExercise.length) {
+            it.name.slice(0..(currentExercise.length-1)).lowercase() == currentExercise.lowercase()
+        }
+        else {
+            currentExercise.slice(0..(it.name.length-1)).lowercase() == it.name.lowercase()
+        }
     }
 
     ExerciseToolBar(currentExercise, exercisesList, state, onClick = onClick)

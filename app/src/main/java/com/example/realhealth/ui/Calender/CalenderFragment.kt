@@ -201,7 +201,7 @@ fun MainAppCalender() {
                     currentDateUpdate = currentDateUpdate,
                     348,
                     302,
-                    Color(0xFF1294F2)
+                    Color(0xFF1565C0)
                 )
             }
             Box(modifier = Modifier.height(20.dp))
@@ -257,7 +257,7 @@ fun Tab3Todo(textcontent: todo, modifier: Modifier = Modifier, delete: (todo) ->
                 Box(modifier = Modifier.width(10.dp))
                 Text(
                     fontSize = 20.sp,
-                    color = Color(0xFF2196F3),
+                    color = Color(0xFF000000),
                     text = textcontent.date,
                     fontWeight = FontWeight.Bold
                 )
@@ -323,7 +323,7 @@ fun AddTodosButton(state: Boolean, modifier: Modifier = Modifier, onClick: () ->
         ) {
             Box(modifier = Modifier
                 .clip(CircleShape)
-                .background(color = Color(0xFF2196F3))
+                .background(color = Color(0xFF1565C0))
                 .size(55.dp)
                 .clickable() { onClick() }
             ) {
@@ -547,7 +547,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                     .clip(RoundedCornerShape(25.dp, 25.dp, 0.dp, 0.dp))
                     .width(370.dp)
                     .height(705.dp)
-                    .background(Color(0xFFE0E0E0)),
+                    .background(Color(0xFFECEFF1)),
                 contentAlignment = Alignment.TopCenter
             ) {
                 Column(
@@ -608,7 +608,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                     }
                     Text(
                         fontSize = 30.sp,
-                        color = Color(0xFF2196F3),
+                        color = Color(0xFF000000),
                         fontWeight = FontWeight.SemiBold,
                         textAlign = TextAlign.Center,
                         text = currentDate,
@@ -630,7 +630,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                         Box(modifier = Modifier.width(10.dp))
                         Text(
                             fontSize = 22.sp,
-                            color = Color(0xFF2196F3),
+                            color = Color(0xFF000000),
                             fontWeight = FontWeight.SemiBold,
                             text = "기구/장비",
                         )
@@ -643,7 +643,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                             .height(34.dp)
                             .width(347.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFFB0D2E0))
+                            .background(Color(0xFFF0F8FF))
                             .clickable() {
                                 if (buttonEnable) {
                                     ShowEquips = !ShowEquips
@@ -693,7 +693,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                 Box(modifier = Modifier.width(10.dp))
                                 Text(
                                     fontSize = 22.sp,
-                                    color = Color(0xFF2196F3),
+                                    color = Color(0xFF000000),
                                     fontWeight = FontWeight.SemiBold,
                                     text = "부위"
                                 )
@@ -706,7 +706,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                     .height(34.dp)
                                     .width(347.dp)
                                     .clip(RoundedCornerShape(8.dp))
-                                    .background(Color(0xFFB0D2E0))
+                                    .background(Color(0xFFF0F8FF))
                                     .clickable() {
                                         if (buttonEnable) {
                                             ShowCategories = !ShowCategories
@@ -755,7 +755,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                         Box(modifier = Modifier.width(10.dp))
                                         Text(
                                             fontSize = 22.sp,
-                                            color = Color(0xFF2196F3),
+                                            color = Color(0xFF000000),
                                             fontWeight = FontWeight.SemiBold,
                                             text = "운동",
                                         )
@@ -768,7 +768,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                             .height(34.dp)
                                             .width(347.dp)
                                             .clip(RoundedCornerShape(8.dp))
-                                            .background(Color(0xFFB0D2E0))
+                                            .background(Color(0xFFF0F8FF))
                                             .clickable() {
                                                 if (buttonEnable) {
                                                     ShowExercises = !ShowExercises
@@ -796,7 +796,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                     textStyle = TextStyle(
                                                         fontSize = 20.sp,
                                                         textAlign = TextAlign.Left,
-                                                        color = Color(0xFF949494),
+                                                        color = Color(0xFFeceff1),
                                                     ),
                                                     decorationBox = { innerTextField ->
                                                         Box() {
@@ -805,7 +805,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                     text = "",
                                                                     fontSize = 20.sp,
                                                                     textAlign = TextAlign.Left,
-                                                                    color = Color(0xFF949494),
+                                                                    color = Color(0xFFeceff1),
                                                                 )
                                                             }
                                                             innerTextField()
@@ -852,7 +852,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                 Box(modifier = Modifier.width(10.dp))
                                                 Text(
                                                     fontSize = 22.sp,
-                                                    color = Color(0xFF2196F3),
+                                                    color = Color(0xFF000000),
                                                     fontWeight = FontWeight.SemiBold,
                                                     text = "노트"
                                                 )
@@ -870,7 +870,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                             .weight(1f)
                                                             .width(347.dp)
                                                             .clip(RoundedCornerShape(8.dp))
-                                                            .background(Color(0xFFB0D2E0))
+                                                            .background(Color(0xFFF0F8FF))
                                                     ) {
                                                         Row(
                                                             horizontalArrangement = Arrangement.Center
@@ -899,8 +899,8 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                             Text(
                                                                                 text = "무엇을 해야 하는지 기록합니다.",
                                                                                 fontSize = 20.sp,
-                                                                                textAlign = TextAlign.Left,
-                                                                                color = Color(0xFF949494),
+                                                                                textAlign = TextAlign.Center,
+                                                                                color = Color(0xFF37474F),
                                                                             )
                                                                         }
                                                                         innerTextField()
@@ -988,7 +988,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                 .width(161.dp)
                                                                 .height(34.44.dp),
                                                             colors = ButtonDefaults.buttonColors(
-                                                                containerColor = Color(0xFFB0E0C1),
+                                                                containerColor = Color(0xFFF0F8FF),
                                                                 contentColor = Color.Black
                                                             ),
                                                             shape = RoundedCornerShape(8.dp)
@@ -1004,7 +1004,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                 .width(161.dp)
                                                                 .height(34.44.dp),
                                                             colors = ButtonDefaults.buttonColors(
-                                                                containerColor = Color(0xFFE0B0B1),
+                                                                containerColor = Color(0xFFF0F8FF),
                                                                 contentColor = Color.Black
                                                             ),
                                                             shape = RoundedCornerShape(8.dp)
@@ -1115,7 +1115,7 @@ fun ExerciseToolBar(currentExercise: String, list: List<Exercise>, state: Boolea
                             .height(34.dp)
                             .width(347.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFFAEDBEE))
+                            .background(Color(0xFFF0F8FF))
                             .clickable() {
                                 onClick(item.name)
                             }

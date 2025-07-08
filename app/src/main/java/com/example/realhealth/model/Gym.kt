@@ -14,6 +14,6 @@ data class Gym(
     val openingHours: String,
     val rating: Double?,
     val photoReference: String? = null,
-    var distance: String?
-
+    var distance: String?,
+    var isFavorite: Boolean = false
 ) : Parcelable

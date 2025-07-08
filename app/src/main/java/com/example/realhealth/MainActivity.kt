@@ -35,7 +35,34 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home, R.id.navigation_gallery, R.id.navigation_calender
             )
         )
-        navView.setupWithNavController(navController)
+        navView.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    // 모든 스택 제거 후 홈으로 이동
+                    navController.popBackStack(navController.graph.startDestinationId, false)
+                    if (navController.currentDestination?.id != R.id.navigation_home) {
+                        navController.navigate(R.id.navigation_home)
+                    }
+                    true
+                }
+
+                R.id.navigation_gallery -> {
+                    if (navController.currentDestination?.id != R.id.navigation_gallery) {
+                        navController.navigate(R.id.navigation_gallery)
+                    }
+                    true
+                }
+
+                R.id.navigation_calender -> {
+                    if (navController.currentDestination?.id != R.id.navigation_calender) {
+                        navController.navigate(R.id.navigation_calender)
+                    }
+                    true
+                }
+
+                else -> false
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

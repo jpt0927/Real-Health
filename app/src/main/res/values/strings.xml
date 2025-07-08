@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Real Health</string>
-    <string name="title_home">Home</string>
-    <string name="title_gallery">Gallery</string>
-    <string name="title_calender">Calender</string>
+    <string name="title_home">운동지도</string>
+    <string name="title_gallery">피드</string>
+    <string name="title_calender">운동기록</string>
 
     <string name="data1">2025.07.04</string>
 
@@ -14,5 +14,5 @@
     <string name="friday">FRI</string>
     <string name="saturday">SAT</string>
 
-    <string name="workout">운동</string>
+    <string name="workout">💪🏻</string>
 </resources>

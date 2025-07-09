@@ -166,6 +166,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                 return@setOnClickListener
             }
 
+            mMap.clear()
             val markerIcon = resizeMarkerIcon(requireContext(), R.drawable.favorites, 80, 80)
             favoriteGyms.forEach { gym ->
                 mMap.addMarker(

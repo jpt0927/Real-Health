@@ -17,4 +17,12 @@
 
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- splash Screen Theme -->
+    <style name="AppTheme.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/real_health_rogo</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.RealHealth</item>
+    </style>
 </resources>

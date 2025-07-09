@@ -5,6 +5,7 @@
     <color name="purple_700">#FF1976D2</color>  <!-- 진한 블루 (Blue 700) -->
     <color name="teal_200">#FFBBDEFB</color>    <!-- 아주 연한 블루 (보조색 - Blue 100) -->
     <color name="teal_700">#FF1565C0</color>    <!-- 포인트성 깊은 블루 (Blue 800) -->
+    <color name="splash">#FF0867E7</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

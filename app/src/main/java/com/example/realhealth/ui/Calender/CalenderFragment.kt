@@ -96,6 +96,19 @@ import kotlinx.serialization.json.Json
 import java.io.File
 import java.util.Calendar
 import kotlin.math.roundToInt
+import androidx.compose.material3.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
+import kotlinx.coroutines.launch
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.RequestBody
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import org.json.JSONObject
 
 class CalenderFragment : Fragment() {
 
@@ -163,6 +176,9 @@ fun MainAppCalender() {
     var jsonDataList: List<todo> by remember { mutableStateOf(emptyList()) }
 
     // 운동 추천 팝업 상태
+    /*val showSuggestionDialog = remember { mutableStateOf(false) }*/
+    val apiKey = "" // 👉 여긴 안전하게 보관하세요
+
     var showSuggestionDialog by remember { mutableStateOf(false) }
 
     val context = LocalContext.current
@@ -269,18 +285,14 @@ fun MainAppCalender() {
                 }
             }
         }
+
         if (showSuggestionDialog) {
-            AlertDialog(
-                onDismissRequest = { showSuggestionDialog = false },
-                title = { Text("오늘의 운동 추천") },
-                text = { Text("오늘은 스트레칭이나 가벼운 유산소 운동은 어떠세요?") },
-                confirmButton = {
-                    TextButton(onClick = { showSuggestionDialog = false }) {
-                        Text("닫기")
-                    }
-                }
+            WorkoutSuggestionDialog(
+                onDismiss = { showSuggestionDialog = false },
+                apiKey = apiKey
             )
         }
+
         MainAddingTodos(
             currentdate = currentDate,
             state = AddingScreenOn,
@@ -291,6 +303,98 @@ fun MainAppCalender() {
             state = AddingScreenOn,
             onClick = { AddingScreenOn = !AddingScreenOn }
         )
+    }
+}
+
+@Composable
+fun WorkoutSuggestionDialog(
+    onDismiss: () -> Unit,
+    apiKey: String
+) {
+    var suggestion by remember { mutableStateOf("로딩 중...") }
+    val coroutineScope = rememberCoroutineScope()
+
+    // GPT API 요청
+    LaunchedEffect(Unit) {
+        coroutineScope.launch {
+            suggestion = getWorkoutSuggestion(apiKey)
+        }
+    }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        containerColor = Color(0xFFB0D2E0),
+        title = { Text("오늘의 운동 추천") },
+        text = {
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(220.dp), // 높이 조정하여 중간 정렬 가능하게
+                contentAlignment = Alignment.Center
+            ) {
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .verticalScroll(rememberScrollState())
+
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.realhealh_c),
+                        contentDescription = "운동 이미지",
+                        modifier = Modifier
+                            .size(100.dp)
+                            .clip(RoundedCornerShape(16.dp))
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = suggestion,
+                        textAlign = TextAlign.Center,
+                        color = Color.White // 글자색도 변경 가능
+                    )
+                }
+            }
+        },
+        confirmButton = {
+            TextButton(onClick = onDismiss) {
+                Text("닫기", color = Color.White)
+            }
+        },
+        shape = RoundedCornerShape(20.dp)
+    )
+}
+
+suspend fun getWorkoutSuggestion(apiKey: String): String {
+    val client = OkHttpClient()
+
+    val json = """
+        {
+          "model": "gpt-3.5-turbo",
+          "messages": [{"role": "user", "content": "오늘 할 헬스 부위 하나를 추천해주고 그에 맞는 운동들과 같이 간단한 이유를 세 문장정도만 설명해줘"}]
+        }
+    """.trimIndent()
+
+    val request = Request.Builder()
+        .url("https://api.openai.com/v1/chat/completions")
+        .addHeader("Authorization", "Bearer $apiKey")
+        .addHeader("Content-Type", "application/json")
+        .post(RequestBody.create("application/json".toMediaTypeOrNull(), json))
+        .build()
+
+    return withContext(Dispatchers.IO) {
+        try {
+            val response = client.newCall(request).execute()
+            val body = response.body?.string()
+            val jsonObject = JSONObject(body ?: "")
+            val content = jsonObject
+                .getJSONArray("choices")
+                .getJSONObject(0)
+                .getJSONObject("message")
+                .getString("content")
+            content.trim()
+        } catch (e: Exception) {
+            e.printStackTrace()
+            "추천을 불러오는 데 실패했어요."
+        }
     }
 }
 
@@ -405,7 +509,7 @@ fun AddTodosButton(state: Boolean, modifier: Modifier = Modifier, onClick: () ->
         ) {
             Box(modifier = Modifier
                 .clip(CircleShape)
-                .background(color = Color(0xFF2196F3))
+                .background(color = Color(0xFF1565C0))
                 .size(55.dp)
                 .clickable() { onClick() }
             ) {

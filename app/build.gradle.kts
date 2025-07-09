@@ -69,6 +69,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation("androidx.compose.material:material-icons-extended:1.5.4")
+    implementation("com.jakewharton.threetenabp:threetenabp:1.4.4")
     kapt("com.github.bumptech.glide:compiler:4.16.0")
     implementation(libs.androidx.runtime.android)
     implementation(libs.androidx.material3.android)

@@ -330,7 +330,7 @@ fun AddImageButton(state: Boolean, modifier: Modifier = Modifier, onClick: () ->
         ) {
             Box(modifier = Modifier
                 .clip(CircleShape)
-                .background(color = Color(0xFF2196F3))
+                .background(color = Color(0xFF1565C0))
                 .size(55.dp)
                 .clickable() { onClick() }
             ) {

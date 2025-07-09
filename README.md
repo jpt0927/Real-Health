@@ -4,8 +4,8 @@
 
 Real Health는 여러분의 "진정한 건강"을 찾아줄 운동 도우미 어플입니다.
 
-# 🔩 주요 기능
-## 1. 🗺️ 지도 검색
+## 🔩 주요 기능
+### 1. 🗺️ 지도 검색
 <img src="https://img.notionusercontent.com/s3/prod-files-secure%2Ff6cb388f-3934-47d6-9928-26d2e10eb0fc%2F8f784e21-1a6f-4f7e-9e39-878802c81d52%2F%ED%83%AD1_%EB%B0%B0%EB%84%88.png/size/w=790?exp=1752051412&sig=uRQHHJWw__1qmCSPy2psCg1Ee4awJ4uNuqGembdtrAk&id=22b5a1b8-3557-80ea-8b04-eded959513ff&table=block&userId=1f5d872b-594c-81d0-8897-0002305e4db8">
 
 **1. 현위치 기반 헬스장 검색**
@@ -21,7 +21,7 @@ Real Health는 여러분의 "진정한 건강"을 찾아줄 운동 도우미 어
 - 메인 페이지에서 오른쪽 상단의 별 버튼 클릭 시, 즐겨찾기 등록된 장소 표시
 
 
-## 2. 📷 피드 관리
+### 2. 📷 피드 관리
 <img src="https://img.notionusercontent.com/s3/prod-files-secure%2Ff6cb388f-3934-47d6-9928-26d2e10eb0fc%2F709acad8-7eb1-4660-aa0f-143ff08ecd2c%2F%ED%83%AD2_%EB%B0%B0%EB%84%88.png/size/w=790?exp=1752051463&sig=J3xs8rP0waRYzKlTWMJAG9GcUASPSealOQ4flDn8cVo&id=22b5a1b8-3557-80a5-bad8-e5f41d1e58d6&table=block&userId=1f5d872b-594c-81d0-8897-0002305e4db8">
 
 **1. 사진 업로드 기능**
@@ -35,7 +35,7 @@ Real Health는 여러분의 "진정한 건강"을 찾아줄 운동 도우미 어
 **3. 날짜 검색 기능**
 - 해당 날짜의 사진들을 검색해서 확인 가능
 
-## 3. 🗓️ 기록 정리
+### 3. 🗓️ 기록 정리
 <img src="https://img.notionusercontent.com/s3/prod-files-secure%2Ff6cb388f-3934-47d6-9928-26d2e10eb0fc%2F46d7b28a-cfca-4631-a355-12c7c4c7f67e%2F%ED%83%AD3_%EB%B0%B0%EB%84%88.png/size/w=790?exp=1752051492&sig=1_VqY-WdGWtxz9sP1Zt8M-D0qt_W2lGHeOaw4mUUqDw&id=22b5a1b8-3557-806a-b807-ed8e80735a17&table=block&userId=1f5d872b-594c-81d0-8897-0002305e4db8">
 
 **1. 운동 기록 가능**
@@ -47,13 +47,13 @@ Real Health는 여러분의 "진정한 건강"을 찾아줄 운동 도우미 어
 - 당일 등록된 운동 기능이 없는 경우, 오른쪽 하단의 버튼을 클릭 시 openai를 활용해 자동으로 운동 추천
 
 
-# 📱 화면 구성
+## 📱 화면 구성
 1. 지도 탭: 지도 검색 기능을 제공하는 화면입니다.
 2. 피드 탭: 피드 관리 기능을 제공하는 화면입니다.
 3. 기록 탭: 기록 정리 기능을 제공하는 화면입니다.
 
 
-# 🔧 기술 스택
+## 🔧 기술 스택
 - Kotlin (Jetpack Compose)
 - Places API
 - Maps SDK for Android

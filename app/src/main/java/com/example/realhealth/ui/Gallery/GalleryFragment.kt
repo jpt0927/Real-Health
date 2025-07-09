@@ -330,7 +330,7 @@ fun AddImageButton(state: Boolean, modifier: Modifier = Modifier, onClick: () ->
         ) {
             Box(modifier = Modifier
                 .clip(CircleShape)
-                .background(color = Color(0xFF1565C0))
+                .background(color = Color(0xFF2196F3))
                 .size(55.dp)
                 .clickable() { onClick() }
             ) {
@@ -433,7 +433,7 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                     .clip(RoundedCornerShape(25.dp, 25.dp, 0.dp, 0.dp))
                     .width(370.dp)
                     .height(705.dp)
-                    .background(Color(0xFFCCCCCC)),
+                    .background(Color(0xFFECEFF1)),
                 contentAlignment = Alignment.TopCenter
             ) {
                 Column(
@@ -703,7 +703,7 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                     .clip(RoundedCornerShape(25.dp, 25.dp, 0.dp, 0.dp))
                     .width(370.dp)
                     .height(705.dp)
-                    .background(Color(0xFFCCCCCC)),
+                    .background(Color(0xFFECEFF1)),
                 contentAlignment = Alignment.TopCenter
             ) {
                 Column(
@@ -1035,7 +1035,7 @@ fun GalleryImage(onClick: () -> Unit, file: File, modifier: Modifier = Modifier)
             ) {
                 Text(
                     text = file.name.slice(6..9) + "." + file.name.slice(10..11) + "." + file.name.slice(12..13),
-                    color = Color.Black,
+                    color = Color.White,
                     fontSize = (imageSize / 17).sp,
                     textAlign = TextAlign.Center,
                     modifier = Modifier

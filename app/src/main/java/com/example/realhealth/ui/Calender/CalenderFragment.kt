@@ -12,7 +12,9 @@ import androidx.compose.animation.expandIn
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.shrinkOut
+import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -53,7 +55,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
@@ -83,6 +84,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Face
+import androidx.compose.ui.Alignment
 import com.example.realhealth.R
 import com.example.realhealth.databinding.FragmentCalenderBinding
 import com.example.realhealth.model.Exercise
@@ -150,6 +152,10 @@ fun MainAppCalender() {
         )
     }
 
+    val todayDate = String.format("%04d", calender.get(Calendar.YEAR)) + "." +
+            String.format("%02d", calender.get(Calendar.MONTH) + 1) + "." +
+            String.format("%02d", calender.get(Calendar.DAY_OF_MONTH))
+
     val currentDateUpdate = { NewDate: String ->
         currentDate = NewDate
     }
@@ -158,9 +164,6 @@ fun MainAppCalender() {
 
     // 운동 추천 팝업 상태
     var showSuggestionDialog by remember { mutableStateOf(false) }
-
-    // 운동 기록이 없을 때만 버튼 노출
-    val hasNoWorkout = jsonDataList.isEmpty()
 
     val context = LocalContext.current
     val filename = "TodoData.json"
@@ -172,6 +175,9 @@ fun MainAppCalender() {
     } else {
         jsonDataList = emptyList()
     }
+
+    // 운동 기록이 없을 때만 버튼 노출
+    var hasNoWorkout by remember { mutableStateOf(jsonDataList.none { it.date == todayDate }) }
 
     val UpdateDataList = {
         if (file.exists()) {
@@ -190,7 +196,7 @@ fun MainAppCalender() {
         Toast.makeText(context, "운동을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
     }
 
-    Box(
+    Surface(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.White)
@@ -229,25 +235,40 @@ fun MainAppCalender() {
                 delete = todoDelete
             )
         }
-
-        // 운동 기록 없을 때만 캐릭터 버튼 노출
-        if (hasNoWorkout) {
-            FloatingActionButton(
-                onClick = { showSuggestionDialog = true },
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
-                    .padding(end = 16.dp, bottom = 80.dp),
-                containerColor = Color(0xFFDCEFFF)
+        AnimatedVisibility(
+            visible = hasNoWorkout && (currentDate == todayDate),
+            enter = slideInHorizontally(
+                initialOffsetX = { fullHeight -> fullHeight }
+            ),
+            exit = slideOutHorizontally (
+                targetOffsetX = { fullHeight -> fullHeight }
+            ),
+            modifier = Modifier.size(50.dp)
+        ) {
+            Column(
+                horizontalAlignment = Alignment.End,
+                verticalArrangement = Arrangement.Bottom,
+                modifier = Modifier.padding(10.dp)
             ) {
-                Icon(
-                    imageVector = Icons.Default.Face, // 예: TagFaces가 안 되면 Face 사용
-                    contentDescription = "추천 운동",
-                    tint = Color(0xFF1565C0)
-                )
+                Box(
+                    modifier = Modifier.size(50.dp)
+                ) {
+                    FloatingActionButton(
+                        onClick = {
+                            showSuggestionDialog = true
+                            hasNoWorkout = false
+                        },
+                        containerColor = Color(0xFFDCEFFF)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Face,
+                            contentDescription = "추천 운동",
+                            tint = Color(0xFF1565C0)
+                        )
+                    }
+                }
             }
         }
-
-        // 추천 팝업 다이얼로그
         if (showSuggestionDialog) {
             AlertDialog(
                 onDismissRequest = { showSuggestionDialog = false },
@@ -260,7 +281,6 @@ fun MainAppCalender() {
                 }
             )
         }
-
         MainAddingTodos(
             currentdate = currentDate,
             state = AddingScreenOn,
@@ -385,7 +405,7 @@ fun AddTodosButton(state: Boolean, modifier: Modifier = Modifier, onClick: () ->
         ) {
             Box(modifier = Modifier
                 .clip(CircleShape)
-                .background(color = Color(0xFF1565C0))
+                .background(color = Color(0xFF2196F3))
                 .size(55.dp)
                 .clickable() { onClick() }
             ) {
@@ -425,7 +445,7 @@ fun CategoryToolBar(currentCategory: String, list: List<String>, state: Boolean,
                             .height(34.dp)
                             .width(347.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFFAEDBEE))
+                            .background(Color(0xFFF0F8FF))
                             .clickable() {
                                 onClick(item)
                             }
@@ -465,7 +485,7 @@ fun EquipToolBar(currentEquip: String, list: List<String>, state: Boolean, modif
                             .height(34.dp)
                             .width(347.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFFAEDBEE))
+                            .background(Color(0xFFF0F8FF))
                             .clickable() {
                                 onClick(item)
                             }
@@ -1050,7 +1070,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                 .width(161.dp)
                                                                 .height(34.44.dp),
                                                             colors = ButtonDefaults.buttonColors(
-                                                                containerColor = Color(0xFFF0F8FF),
+                                                                containerColor = Color(0xFFB0E0C1),
                                                                 contentColor = Color.Black
                                                             ),
                                                             shape = RoundedCornerShape(8.dp)
@@ -1066,7 +1086,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                 .width(161.dp)
                                                                 .height(34.44.dp),
                                                             colors = ButtonDefaults.buttonColors(
-                                                                containerColor = Color(0xFFF0F8FF),
+                                                                containerColor = Color(0xFFE0B0B1),
                                                                 contentColor = Color.Black
                                                             ),
                                                             shape = RoundedCornerShape(8.dp)

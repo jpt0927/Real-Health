@@ -75,6 +75,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Face
 import com.example.realhealth.R
 import com.example.realhealth.databinding.FragmentCalenderBinding
 import com.example.realhealth.model.Exercise
@@ -134,7 +142,13 @@ fun MainAppCalender() {
     var AddingScreenOn by remember { mutableStateOf(false) }
 
     val calender = java.util.Calendar.getInstance()
-    var currentDate by remember { mutableStateOf(String.format("%04d", calender.get(Calendar.YEAR)) + "." + String.format("%02d", calender.get(Calendar.MONTH) + 1) + "." + String.format("%02d", calender.get(Calendar.DAY_OF_MONTH))) }
+    var currentDate by remember {
+        mutableStateOf(
+            String.format("%04d", calender.get(Calendar.YEAR)) + "." +
+                    String.format("%02d", calender.get(Calendar.MONTH) + 1) + "." +
+                    String.format("%02d", calender.get(Calendar.DAY_OF_MONTH))
+        )
+    }
 
     val currentDateUpdate = { NewDate: String ->
         currentDate = NewDate
@@ -142,8 +156,13 @@ fun MainAppCalender() {
 
     var jsonDataList: List<todo> by remember { mutableStateOf(emptyList()) }
 
-    val context = LocalContext.current
+    // 운동 추천 팝업 상태
+    var showSuggestionDialog by remember { mutableStateOf(false) }
 
+    // 운동 기록이 없을 때만 버튼 노출
+    val hasNoWorkout = jsonDataList.isEmpty()
+
+    val context = LocalContext.current
     val filename = "TodoData.json"
     val file = File(context.filesDir, filename)
 
@@ -171,15 +190,13 @@ fun MainAppCalender() {
         Toast.makeText(context, "운동을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
     }
 
-    Surface(
+    Box(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.White)
             .padding(
-                start = WindowInsets.safeDrawing.asPaddingValues()
-                    .calculateStartPadding(layoutDirection),
-                end = WindowInsets.safeDrawing.asPaddingValues()
-                    .calculateEndPadding(layoutDirection),
+                start = WindowInsets.safeDrawing.asPaddingValues().calculateStartPadding(layoutDirection),
+                end = WindowInsets.safeDrawing.asPaddingValues().calculateEndPadding(layoutDirection),
                 bottom = 56.dp
             )
     ) {
@@ -201,14 +218,59 @@ fun MainAppCalender() {
                     currentDateUpdate = currentDateUpdate,
                     348,
                     302,
-                    Color(0xFF1294F2)
+                    Color(0xFF1565C0)
                 )
             }
             Box(modifier = Modifier.height(20.dp))
-            Tab3TodoList(currentDate = currentDate, jsonDataList, modifier = Modifier.weight(1f), delete = todoDelete)
+            Tab3TodoList(
+                currentDate = currentDate,
+                ContentList = jsonDataList,
+                modifier = Modifier.weight(1f),
+                delete = todoDelete
+            )
         }
-        MainAddingTodos(currentdate = currentDate, state = AddingScreenOn, onClick = { AddingScreenOn = !AddingScreenOn }, Updater = UpdateDataList)
-        AddTodosButton(state = AddingScreenOn, onClick = { AddingScreenOn = !AddingScreenOn })
+
+        // 운동 기록 없을 때만 캐릭터 버튼 노출
+        if (hasNoWorkout) {
+            FloatingActionButton(
+                onClick = { showSuggestionDialog = true },
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(end = 16.dp, bottom = 80.dp),
+                containerColor = Color(0xFFDCEFFF)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Face, // 예: TagFaces가 안 되면 Face 사용
+                    contentDescription = "추천 운동",
+                    tint = Color(0xFF1565C0)
+                )
+            }
+        }
+
+        // 추천 팝업 다이얼로그
+        if (showSuggestionDialog) {
+            AlertDialog(
+                onDismissRequest = { showSuggestionDialog = false },
+                title = { Text("오늘의 운동 추천") },
+                text = { Text("오늘은 스트레칭이나 가벼운 유산소 운동은 어떠세요?") },
+                confirmButton = {
+                    TextButton(onClick = { showSuggestionDialog = false }) {
+                        Text("닫기")
+                    }
+                }
+            )
+        }
+
+        MainAddingTodos(
+            currentdate = currentDate,
+            state = AddingScreenOn,
+            onClick = { AddingScreenOn = !AddingScreenOn },
+            Updater = UpdateDataList
+        )
+        AddTodosButton(
+            state = AddingScreenOn,
+            onClick = { AddingScreenOn = !AddingScreenOn }
+        )
     }
 }
 
@@ -257,7 +319,7 @@ fun Tab3Todo(textcontent: todo, modifier: Modifier = Modifier, delete: (todo) ->
                 Box(modifier = Modifier.width(10.dp))
                 Text(
                     fontSize = 20.sp,
-                    color = Color(0xFF2196F3),
+                    color = Color(0xFF000000),
                     text = textcontent.date,
                     fontWeight = FontWeight.Bold
                 )
@@ -323,7 +385,7 @@ fun AddTodosButton(state: Boolean, modifier: Modifier = Modifier, onClick: () ->
         ) {
             Box(modifier = Modifier
                 .clip(CircleShape)
-                .background(color = Color(0xFF2196F3))
+                .background(color = Color(0xFF1565C0))
                 .size(55.dp)
                 .clickable() { onClick() }
             ) {
@@ -547,7 +609,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                     .clip(RoundedCornerShape(25.dp, 25.dp, 0.dp, 0.dp))
                     .width(370.dp)
                     .height(705.dp)
-                    .background(Color(0xFFE0E0E0)),
+                    .background(Color(0xFFECEFF1)),
                 contentAlignment = Alignment.TopCenter
             ) {
                 Column(
@@ -608,7 +670,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                     }
                     Text(
                         fontSize = 30.sp,
-                        color = Color(0xFF2196F3),
+                        color = Color(0xFF000000),
                         fontWeight = FontWeight.SemiBold,
                         textAlign = TextAlign.Center,
                         text = currentDate,
@@ -630,7 +692,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                         Box(modifier = Modifier.width(10.dp))
                         Text(
                             fontSize = 22.sp,
-                            color = Color(0xFF2196F3),
+                            color = Color(0xFF000000),
                             fontWeight = FontWeight.SemiBold,
                             text = "기구/장비",
                         )
@@ -643,7 +705,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                             .height(34.dp)
                             .width(347.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFFB0D2E0))
+                            .background(Color(0xFFF0F8FF))
                             .clickable() {
                                 if (buttonEnable) {
                                     ShowEquips = !ShowEquips
@@ -693,7 +755,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                 Box(modifier = Modifier.width(10.dp))
                                 Text(
                                     fontSize = 22.sp,
-                                    color = Color(0xFF2196F3),
+                                    color = Color(0xFF000000),
                                     fontWeight = FontWeight.SemiBold,
                                     text = "부위"
                                 )
@@ -706,7 +768,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                     .height(34.dp)
                                     .width(347.dp)
                                     .clip(RoundedCornerShape(8.dp))
-                                    .background(Color(0xFFB0D2E0))
+                                    .background(Color(0xFFF0F8FF))
                                     .clickable() {
                                         if (buttonEnable) {
                                             ShowCategories = !ShowCategories
@@ -755,7 +817,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                         Box(modifier = Modifier.width(10.dp))
                                         Text(
                                             fontSize = 22.sp,
-                                            color = Color(0xFF2196F3),
+                                            color = Color(0xFF000000),
                                             fontWeight = FontWeight.SemiBold,
                                             text = "운동",
                                         )
@@ -768,7 +830,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                             .height(34.dp)
                                             .width(347.dp)
                                             .clip(RoundedCornerShape(8.dp))
-                                            .background(Color(0xFFB0D2E0))
+                                            .background(Color(0xFFF0F8FF))
                                             .clickable() {
                                                 if (buttonEnable) {
                                                     ShowExercises = !ShowExercises
@@ -796,7 +858,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                     textStyle = TextStyle(
                                                         fontSize = 20.sp,
                                                         textAlign = TextAlign.Left,
-                                                        color = Color(0xFF949494),
+                                                        color = Color(0xFFeceff1),
                                                     ),
                                                     decorationBox = { innerTextField ->
                                                         Box() {
@@ -805,7 +867,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                     text = "",
                                                                     fontSize = 20.sp,
                                                                     textAlign = TextAlign.Left,
-                                                                    color = Color(0xFF949494),
+                                                                    color = Color(0xFFeceff1),
                                                                 )
                                                             }
                                                             innerTextField()
@@ -852,7 +914,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                 Box(modifier = Modifier.width(10.dp))
                                                 Text(
                                                     fontSize = 22.sp,
-                                                    color = Color(0xFF2196F3),
+                                                    color = Color(0xFF000000),
                                                     fontWeight = FontWeight.SemiBold,
                                                     text = "노트"
                                                 )
@@ -870,7 +932,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                             .weight(1f)
                                                             .width(347.dp)
                                                             .clip(RoundedCornerShape(8.dp))
-                                                            .background(Color(0xFFB0D2E0))
+                                                            .background(Color(0xFFF0F8FF))
                                                     ) {
                                                         Row(
                                                             horizontalArrangement = Arrangement.Center
@@ -899,8 +961,8 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                             Text(
                                                                                 text = "무엇을 해야 하는지 기록합니다.",
                                                                                 fontSize = 20.sp,
-                                                                                textAlign = TextAlign.Left,
-                                                                                color = Color(0xFF949494),
+                                                                                textAlign = TextAlign.Center,
+                                                                                color = Color(0xFF37474F),
                                                                             )
                                                                         }
                                                                         innerTextField()
@@ -988,7 +1050,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                 .width(161.dp)
                                                                 .height(34.44.dp),
                                                             colors = ButtonDefaults.buttonColors(
-                                                                containerColor = Color(0xFFB0E0C1),
+                                                                containerColor = Color(0xFFF0F8FF),
                                                                 contentColor = Color.Black
                                                             ),
                                                             shape = RoundedCornerShape(8.dp)
@@ -1004,7 +1066,7 @@ fun MainAddingTodos(currentdate: String, state: Boolean, modifier: Modifier = Mo
                                                                 .width(161.dp)
                                                                 .height(34.44.dp),
                                                             colors = ButtonDefaults.buttonColors(
-                                                                containerColor = Color(0xFFE0B0B1),
+                                                                containerColor = Color(0xFFF0F8FF),
                                                                 contentColor = Color.Black
                                                             ),
                                                             shape = RoundedCornerShape(8.dp)
@@ -1115,7 +1177,7 @@ fun ExerciseToolBar(currentExercise: String, list: List<Exercise>, state: Boolea
                             .height(34.dp)
                             .width(347.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFFAEDBEE))
+                            .background(Color(0xFFF0F8FF))
                             .clickable() {
                                 onClick(item.name)
                             }

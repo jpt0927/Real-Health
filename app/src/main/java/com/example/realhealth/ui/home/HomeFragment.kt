@@ -5,7 +5,6 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +28,13 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.net.PlacesClient
 import com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+import com.example.realhealth.util.FavoriteManager
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.BitmapDescriptor
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.content.Context
+import kotlin.math.*
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
@@ -42,9 +48,11 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var toggleButton: Button
     private lateinit var btnSearchHere: Button
+    private lateinit var favoritesButton: ImageButton
     private lateinit var btnSort: ImageButton
     private lateinit var recyclerView: FastScrollRecyclerView
     private lateinit var placesClient: PlacesClient
+    private lateinit var backPressedCallback: OnBackPressedCallback
     private var isMapMode = true
     private val gymList = mutableListOf<Gym>()
     private var isFirstMapIdle = true
@@ -73,6 +81,12 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         recyclerView.adapter?.notifyDataSetChanged()
     }
 
+    private fun resizeMarkerIcon(context: Context, resId: Int, width: Int, height: Int): BitmapDescriptor {
+        val bitmap = BitmapFactory.decodeResource(context.resources, resId)
+        val resized = Bitmap.createScaledBitmap(bitmap, width, height, false)
+        return BitmapDescriptorFactory.fromBitmap(resized)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -83,23 +97,25 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         recyclerView = view.findViewById(R.id.gym_list)
         btnSearchHere = view.findViewById(R.id.btn_search_here)
         btnSort = view.findViewById(R.id.btn_sort)
+        favoritesButton = view.findViewById(R.id.btn_show_favorites)
 
         recyclerView.visibility = View.GONE
+        btnSort.visibility = View.GONE
+
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = GymAdapter(gymList) { gym ->
             val action = HomeFragmentDirections.actionNavigationHomeToGymDetailFragment(gym)
             findNavController().navigate(action)
         }
-        btnSort.visibility = View.GONE
 
         toggleButton.setOnClickListener {
             if (isMapMode) {
                 searchNearbyGyms(mMap.cameraPosition.target)
-                toggleButton.text = "목록보기"
+                toggleButton.text = "목록"
                 recyclerView.visibility = View.GONE
                 btnSort.visibility = View.GONE
             } else {
-                toggleButton.text = "지도보기"
+                toggleButton.text = getString(R.string.workout) // "운동"으로 바꿈
                 recyclerView.visibility = View.VISIBLE
                 btnSort.visibility = View.VISIBLE
                 recyclerView.adapter?.notifyDataSetChanged()
@@ -112,18 +128,27 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
             popup.menuInflater.inflate(R.menu.sort_menu, popup.menu)
             popup.setOnMenuItemClickListener { item ->
                 when (item.itemId) {
-                    R.id.menu_sort_distance -> {
-                        sortGymsByDistance()
-                        true
-                    }
-                    R.id.menu_sort_rating -> {
-                        sortGymsByRating()
-                        true
-                    }
+                    R.id.menu_sort_distance -> { sortGymsByDistance(); true }
+                    R.id.menu_sort_rating -> { sortGymsByRating(); true }
                     else -> false
                 }
             }
             popup.show()
+        }
+
+        favoritesButton.setOnClickListener {
+            val favoriteGyms = gymList.filter {
+                FavoriteManager.isFavorite(requireContext(), it.placeId)
+            }
+            val markerIcon = resizeMarkerIcon(requireContext(), R.drawable.favorites, 80, 80)
+            favoriteGyms.forEach { gym ->
+                mMap.addMarker(
+                    MarkerOptions()
+                        .position(LatLng(gym.lat, gym.lng))
+                        .title(gym.name)
+                        .icon(markerIcon)
+                )
+            }
         }
 
         return view
@@ -150,7 +175,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                         isMapMode = true
                         recyclerView.visibility = View.GONE
                         btnSort.visibility = View.GONE
-                        toggleButton.text = "목록보기"
+                        toggleButton.text = "목록"
                         mMap.clear() // 지도 마커 제거
                     } else {
                         // 지도보기 → 기본 뒤로가기(앱 종료 등)
@@ -170,14 +195,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         mapFragment?.getMapAsync(this)
     }
 
-
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        if (ContextCompat.checkSelfPermission(
-                requireContext(), Manifest.permission.ACCESS_FINE_LOCATION
-            ) == PackageManager.PERMISSION_GRANTED
-        ) {
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             try {
                 mMap.isMyLocationEnabled = true
             } catch (e: SecurityException) {
@@ -187,8 +208,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
             locationPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         }
 
-        val seoulStation = LatLng(37.5563, 126.9723)
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(seoulStation, 14f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(37.5563, 126.9723), 14f))
 
         mMap.setOnCameraMoveStartedListener {
             btnSearchHere.visibility = View.GONE
@@ -198,17 +218,16 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
             if (isFirstMapIdle) {
                 isFirstMapIdle = false
             } else {
-                btnSearchHere.visibility = View.VISIBLE
+                // isMapMode일 때는 버튼 안 보이게, 목록 모드일 때만 보이게
+                btnSearchHere.visibility = if (isMapMode) View.GONE else View.VISIBLE
             }
         }
 
         btnSearchHere.setOnClickListener {
             val center = mMap.cameraPosition.target
-
             mMap.clear()
             gymList.clear()
             recyclerView.adapter?.notifyDataSetChanged()
-
             searchNearbyGyms(center)
             btnSearchHere.visibility = View.GONE
         }
@@ -218,7 +237,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         super.onResume()
         if (::mMap.isInitialized) {
             mMap.clear()
-            // gymList.clear()
             recyclerView.adapter?.notifyDataSetChanged()
             recyclerView.visibility = if (isMapMode) View.GONE else View.VISIBLE
             toggleButton.text = if (isMapMode) getString(R.string.workout) else "지도보기"
@@ -226,49 +244,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
-    private fun getWalkingDistance(
-        originLatLng: LatLng,
-        destinationPlaceId: String,
-        callback: (String?) -> Unit
-    ) {
-        val apiKey = getString(R.string.google_maps_key)
-        val url = "https://maps.googleapis.com/maps/api/directions/json" +
-                "?origin=${originLatLng.latitude},${originLatLng.longitude}" +
-                "&destination=place_id:$destinationPlaceId" +
-                "&mode=walking" +
-                "&language=ko" +
-                "&key=$apiKey"
-
-        val request = Request.Builder().url(url).build()
-        val client = OkHttpClient()
-
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                e.printStackTrace()
-                callback(null)
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                val body = response.body?.string()
-                try {
-                    val json = JSONObject(body ?: "")
-                    val routes = json.optJSONArray("routes")
-                    if (routes != null && routes.length() > 0) {
-                        val legs = routes.getJSONObject(0).optJSONArray("legs")
-                        if (legs != null && legs.length() > 0) {
-                            val leg = legs.getJSONObject(0)
-                            val distance = leg.optJSONObject("distance")?.optString("text")
-                            callback(distance)
-                            return
-                        }
-                    }
-                    Log.e("DistanceError", "Directions API failed. Raw JSON: $body")
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-                callback(null)
-            }
-        })
+    fun calculateStraightDistanceMeter(lat1: Double, lng1: Double, lat2: Double, lng2: Double): Double {
+        val latDistance = (lat2 - lat1) * 111000 // 위도 1도 당 대략 111km = 111,000m
+        val lngDistance = (lng2 - lng1) * 111000 * cos(Math.toRadians(lat1)) // 경도는 위도에 따라 변함
+        return sqrt(latDistance * latDistance + lngDistance * lngDistance)
     }
 
     private fun searchNearbyGyms(center: LatLng) {
@@ -318,14 +297,11 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
                         override fun onResponse(call: Call, response: Response) {
                             val detailBody = response.body?.string() ?: return
-                            val detailJson =
-                                JSONObject(detailBody).optJSONObject("result") ?: return
+                            val detailJson = JSONObject(detailBody).optJSONObject("result") ?: return
 
-                            val fullAddress =
-                                detailJson.optString("formatted_address", "주소 정보 없음")
+                            val fullAddress = detailJson.optString("formatted_address", "주소 정보 없음")
                             val address = fullAddress.replaceFirst("^대한민국\\s*".toRegex(), "")
-                            val phone =
-                                detailJson.optString("formatted_phone_number", "전화번호 정보 없음")
+                            val phone = detailJson.optString("formatted_phone_number", "전화번호 정보 없음")
                             val openingHours = detailJson.optJSONObject("opening_hours")
                                 ?.optJSONArray("weekday_text")?.let { arr ->
                                     (0 until arr.length()).joinToString("\n") { arr.getString(it) }
@@ -344,30 +320,44 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
                             val rating = detailJson.optDouble("rating", -1.0).takeIf { it >= 0 }
 
-                            val origin = LatLng(37.554722, 126.970833)
+                            val origin = center // 검색 중심 좌표
                             val destination = LatLng(lat, lng)
 
-                            getWalkingDistance(origin, placeId) { distanceText ->
-                                val gym = Gym(
-                                    name = name,
-                                    lat = lat,
-                                    lng = lng,
-                                    placeId = placeId,
-                                    address = address,
-                                    phoneNumber = phone,
-                                    openingHours = openingHours,
-                                    photoReference = photoUrl,
-                                    rating = rating,
-                                    distance = distanceText
-                                )
+                            // 직선 거리(m) 계산
+                            val distanceMeters = calculateStraightDistanceMeter(origin.latitude, origin.longitude, lat, lng)
 
-                                handler.post {
+                            // 보기 편하게 km 혹은 m 단위 문자열로 변환
+                            val distanceText = if (distanceMeters >= 1000) {
+                                String.format("%.2f km", distanceMeters / 1000)
+                            } else {
+                                String.format("%.0f m", distanceMeters)
+                            }
+
+                            val gym = Gym(
+                                name = name,
+                                lat = lat,
+                                lng = lng,
+                                placeId = placeId,
+                                address = address,
+                                phoneNumber = phone,
+                                openingHours = openingHours,
+                                photoReference = photoUrl,
+                                rating = rating,
+                                distance = distanceText
+                            )
+
+                            val gymicon = resizeMarkerIcon(requireContext(), R.drawable.muscles, 80, 80)
+
+                            handler.post {
+                                val alreadyExists = gymList.any { it.placeId == gym.placeId }
+                                if (!alreadyExists) {
                                     gymList.add(gym)
                                     recyclerView.adapter?.notifyItemInserted(gymList.size - 1)
                                     mMap.addMarker(
                                         MarkerOptions()
                                             .position(destination)
                                             .title(name)
+                                            .icon(gymicon)
                                     )
                                 }
                             }

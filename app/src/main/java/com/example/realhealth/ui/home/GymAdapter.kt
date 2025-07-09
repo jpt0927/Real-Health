@@ -6,17 +6,20 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.realhealth.R
 import com.example.realhealth.model.Gym
+import com.example.realhealth.util.FavoriteManager
 
 class GymAdapter(
     private val gyms: List<Gym>,
-    private val onClick: (Gym) -> Unit
+    private val onClick: (Gym) -> Unit,
 ) : RecyclerView.Adapter<GymAdapter.GymViewHolder>() {
 
     inner class GymViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val favoriteButton: ImageButton = itemView.findViewById(R.id.btn_favorite)
         private val imageView: ImageView = itemView.findViewById(R.id.gym_image)
         private val nameView: TextView = itemView.findViewById(R.id.gym_name)
         private val distanceView: TextView = itemView.findViewById(R.id.gym_distance)
@@ -33,9 +36,24 @@ class GymAdapter(
                 ratingBar.visibility = View.GONE
             }
 
-            Glide.with(itemView.context)
+            val context = itemView.context
+            // 즐겨찾기 상태 확인
+            val isFav = FavoriteManager.isFavorite(context, gym.placeId)
+            // 이미지 변경 (빈 별/채워진 별)
+            favoriteButton.setImageResource(
+                if (isFav) R.drawable.star_fill else R.drawable.star
+            )
+
+            // 클릭 리스너로 토글 기능 구현
+            favoriteButton.setOnClickListener {
+                val newState = !FavoriteManager.isFavorite(context, gym.placeId)
+                FavoriteManager.setFavorite(context, gym.placeId, newState)
+                notifyItemChanged(adapterPosition) // UI 갱신
+            }
+
+            Glide.with(context)
                 .load(gym.photoReference)
-                .placeholder(R.drawable.ic_home_black_24dp) // drawable에 있는 기본 이미지
+                .placeholder(R.drawable.muscle)
                 .into(imageView)
 
             itemView.setOnClickListener {
@@ -45,8 +63,7 @@ class GymAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GymViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.gym_list, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.gym_list, parent, false)
         return GymViewHolder(view)
     }
 

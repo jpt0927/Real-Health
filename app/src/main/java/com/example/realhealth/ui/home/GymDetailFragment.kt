@@ -87,6 +87,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.ImageView
+import android.widget.ImageButton
+import com.example.realhealth.util.FavoriteManager
 import android.widget.RatingBar
 import com.bumptech.glide.Glide
 import androidx.activity.OnBackPressedCallback
@@ -139,8 +141,25 @@ class GymDetailFragment : Fragment() {
         gym.photoReference?.let { photoUrl ->
             Glide.with(requireContext())
                 .load(photoUrl)
-                .placeholder(R.drawable.ic_home_black_24dp)
+                .placeholder(R.drawable.muscle)
                 .into(gymImageView)
+        }
+
+        val favoriteButton = view.findViewById<ImageButton>(R.id.btn_favorite)
+        val context = requireContext()
+        val isFav = FavoriteManager.isFavorite(context, gym.placeId)
+
+        // 별 상태 반영
+        favoriteButton.setImageResource(
+            if (isFav) R.drawable.star_fill else R.drawable.star
+        )
+
+        favoriteButton.setOnClickListener {
+            val newState = !FavoriteManager.isFavorite(context, gym.placeId)
+            FavoriteManager.setFavorite(context, gym.placeId, newState)
+            favoriteButton.setImageResource(
+                if (newState) R.drawable.star_fill else R.drawable.star
+            )
         }
 
         return view

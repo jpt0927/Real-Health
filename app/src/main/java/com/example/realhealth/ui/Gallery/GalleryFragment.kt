@@ -283,7 +283,7 @@ fun SearchGalleryImageByCurrentDate(modifier: Modifier = Modifier, onSearch: (St
                 textStyle = TextStyle(
                     fontSize = 20.sp,
                     textAlign = TextAlign.Left,
-                    color = Color(0xFF949494),
+                    color = Color(0xFFFFFFFF),
                 ),
                 decorationBox = { innerTextField ->
                     Box() {
@@ -292,7 +292,7 @@ fun SearchGalleryImageByCurrentDate(modifier: Modifier = Modifier, onSearch: (St
                                 text = "Search (YYYY.MM.DD)",
                                 fontSize = 20.sp,
                                 textAlign = TextAlign.Left,
-                                color = Color(0xFF949494),
+                                color = Color(0xFFFFFFFF),
                             )
                         }
                         innerTextField()
@@ -330,7 +330,7 @@ fun AddImageButton(state: Boolean, modifier: Modifier = Modifier, onClick: () ->
         ) {
             Box(modifier = Modifier
                 .clip(CircleShape)
-                .background(color = Color(0xFF2196F3))
+                .background(color = Color(0xFF1565C0))
                 .size(55.dp)
                 .clickable() { onClick() }
             ) {
@@ -501,7 +501,7 @@ fun MainAddingImage(state: Boolean, modifier: Modifier = Modifier, onClick: () -
                                 println("$weightedCalenderWidthdp, $weightedCalenderHeightdp")
                             }
                     ) {
-                        CalenderMain(currentDate = currentDate, currentDateUpdate = currentDateUpdate, 349, weightedCalenderHeightdp, Color(0xFF1294F2))
+                        CalenderMain(currentDate = currentDate, currentDateUpdate = currentDateUpdate, 349, weightedCalenderHeightdp, Color(0xFF1565C0))
                     }
                     Box(modifier = Modifier.height(5.dp))
                     Box(
@@ -851,7 +851,8 @@ fun MainSingleImage(state: Boolean, file: File?, modifier: Modifier = Modifier, 
                                 items((0..FileCount-1).toList()) { item ->
                                     if (item != 0) Box(modifier = Modifier.size(5.dp))
                                     Box(modifier = Modifier.size(8.dp).clip(CircleShape)
-                                        .background(color = if (FileIndex == item) Color(0xFF5E5757) else Color(0xFFD9D9D9))
+                                        .background(color = if (FileIndex == item) Color(0xFF5E5757) else Color(0xFFECEFF1
+                                        ))
                                         .border(width = 0.3.dp, color = Color.Black, shape = CircleShape))
                                 }
                             }
@@ -1038,7 +1039,7 @@ fun GalleryImage(onClick: () -> Unit, file: File, modifier: Modifier = Modifier)
                     fontSize = (imageSize / 17).sp,
                     textAlign = TextAlign.Center,
                     modifier = Modifier
-                        .background(Color(0xBfD9D9D9))
+                        .background(Color(0xBf000000))
                         .padding(start = 1.dp, end = 1.dp)
                 )
             }

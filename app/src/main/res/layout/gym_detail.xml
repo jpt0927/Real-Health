@@ -2,8 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingTop="20dp">
+    android:layout_height="match_parent">
 
     <!-- 헬스장 이름 -->
     <TextView
@@ -19,9 +18,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- 별점 및 텍스트 한 줄에 정렬 -->
-
-    <!-- 헬스장 이미지 -->
+    <ImageButton
+        android:id="@+id/btn_favorite"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="12dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="즐겨찾기"
+        android:padding="4dp"
+        android:src="@drawable/star"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gym_name" />
 
     <LinearLayout
         android:id="@+id/gym_rating_container"
@@ -40,7 +49,8 @@
             android:layout_height="wrap_content"
             android:isIndicator="true"
             android:numStars="5"
-            android:stepSize="0.5" />
+            android:stepSize="0.5"
+            android:progressTint="#FFD700"/>
 
         <TextView
             android:id="@+id/gym_rating_text"

@@ -256,7 +256,7 @@ fun CalenderDays(DisplayDate: String, CurrentDate: String, width: Int, height: I
                 modifier = Modifier
                     .height((height * 3 / 304).dp)
                     .width((width * 300 / 349).dp)
-                    .background(color = Color(0xFFD9D9D9))
+                    .background(color = Color(0xFF0000))
             )
         }
         Column(
@@ -488,7 +488,8 @@ fun CalenderMonths(DisplayDate: String, width: Int, height: Int, modifier: Modif
                 modifier = Modifier
                     .height((height * 3 / 304).dp)
                     .width((width * 300 / 349).dp)
-                    .background(color = Color(0xFFD9D9D9))
+                    .background(color = Color(0xFFECEFF1
+                    ))
             )
         }
         Column(
@@ -767,7 +768,8 @@ fun CalenderYears(DisplayDate: String, width: Int, height: Int, modifier: Modifi
                 modifier = Modifier
                     .height((height * 3 / 304).dp)
                     .width((width * 300 / 349).dp)
-                    .background(color = Color(0xFFD9D9D9))
+                    .background(color = Color(0xFFECEFF1
+                    ))
             )
         }
         Column(
@@ -803,7 +805,7 @@ fun CalenderYears(DisplayDate: String, width: Int, height: Int, modifier: Modifi
                     }
                     Box(modifier = Modifier.width((width*10/349).dp))
                     Button(
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1294F2)),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1565C0)),
                         onClick = {
                             if (text.length > 4) text = text.slice(0..3)
                             val year = text.toIntOrNull()
@@ -828,5 +830,5 @@ fun CalenderYears(DisplayDate: String, width: Int, height: Int, modifier: Modifi
 @Preview
 @Composable
 fun previewMain() {
-    CalenderMain(width = 349, height = 304, color = Color(0xFF1294F2))
+    CalenderMain(width = 349, height = 304, color = Color(0xFF1565C0))
 }

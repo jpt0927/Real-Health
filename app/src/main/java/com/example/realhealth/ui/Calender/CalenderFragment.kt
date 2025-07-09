@@ -75,6 +75,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
+import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Face
 import com.example.realhealth.R
 import com.example.realhealth.databinding.FragmentCalenderBinding
 import com.example.realhealth.model.Exercise
@@ -134,7 +142,13 @@ fun MainAppCalender() {
     var AddingScreenOn by remember { mutableStateOf(false) }
 
     val calender = java.util.Calendar.getInstance()
-    var currentDate by remember { mutableStateOf(String.format("%04d", calender.get(Calendar.YEAR)) + "." + String.format("%02d", calender.get(Calendar.MONTH) + 1) + "." + String.format("%02d", calender.get(Calendar.DAY_OF_MONTH))) }
+    var currentDate by remember {
+        mutableStateOf(
+            String.format("%04d", calender.get(Calendar.YEAR)) + "." +
+                    String.format("%02d", calender.get(Calendar.MONTH) + 1) + "." +
+                    String.format("%02d", calender.get(Calendar.DAY_OF_MONTH))
+        )
+    }
 
     val currentDateUpdate = { NewDate: String ->
         currentDate = NewDate
@@ -142,8 +156,13 @@ fun MainAppCalender() {
 
     var jsonDataList: List<todo> by remember { mutableStateOf(emptyList()) }
 
-    val context = LocalContext.current
+    // 운동 추천 팝업 상태
+    var showSuggestionDialog by remember { mutableStateOf(false) }
 
+    // 운동 기록이 없을 때만 버튼 노출
+    val hasNoWorkout = jsonDataList.isEmpty()
+
+    val context = LocalContext.current
     val filename = "TodoData.json"
     val file = File(context.filesDir, filename)
 
@@ -171,15 +190,13 @@ fun MainAppCalender() {
         Toast.makeText(context, "운동을 삭제하였습니다.", Toast.LENGTH_SHORT).show()
     }
 
-    Surface(
+    Box(
         modifier = Modifier
             .fillMaxSize()
             .background(color = Color.White)
             .padding(
-                start = WindowInsets.safeDrawing.asPaddingValues()
-                    .calculateStartPadding(layoutDirection),
-                end = WindowInsets.safeDrawing.asPaddingValues()
-                    .calculateEndPadding(layoutDirection),
+                start = WindowInsets.safeDrawing.asPaddingValues().calculateStartPadding(layoutDirection),
+                end = WindowInsets.safeDrawing.asPaddingValues().calculateEndPadding(layoutDirection),
                 bottom = 56.dp
             )
     ) {
@@ -205,10 +222,55 @@ fun MainAppCalender() {
                 )
             }
             Box(modifier = Modifier.height(20.dp))
-            Tab3TodoList(currentDate = currentDate, jsonDataList, modifier = Modifier.weight(1f), delete = todoDelete)
+            Tab3TodoList(
+                currentDate = currentDate,
+                ContentList = jsonDataList,
+                modifier = Modifier.weight(1f),
+                delete = todoDelete
+            )
         }
-        MainAddingTodos(currentdate = currentDate, state = AddingScreenOn, onClick = { AddingScreenOn = !AddingScreenOn }, Updater = UpdateDataList)
-        AddTodosButton(state = AddingScreenOn, onClick = { AddingScreenOn = !AddingScreenOn })
+
+        // 운동 기록 없을 때만 캐릭터 버튼 노출
+        if (hasNoWorkout) {
+            FloatingActionButton(
+                onClick = { showSuggestionDialog = true },
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(end = 16.dp, bottom = 80.dp),
+                containerColor = Color(0xFFDCEFFF)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Face, // 예: TagFaces가 안 되면 Face 사용
+                    contentDescription = "추천 운동",
+                    tint = Color(0xFF1565C0)
+                )
+            }
+        }
+
+        // 추천 팝업 다이얼로그
+        if (showSuggestionDialog) {
+            AlertDialog(
+                onDismissRequest = { showSuggestionDialog = false },
+                title = { Text("오늘의 운동 추천") },
+                text = { Text("오늘은 스트레칭이나 가벼운 유산소 운동은 어떠세요?") },
+                confirmButton = {
+                    TextButton(onClick = { showSuggestionDialog = false }) {
+                        Text("닫기")
+                    }
+                }
+            )
+        }
+
+        MainAddingTodos(
+            currentdate = currentDate,
+            state = AddingScreenOn,
+            onClick = { AddingScreenOn = !AddingScreenOn },
+            Updater = UpdateDataList
+        )
+        AddTodosButton(
+            state = AddingScreenOn,
+            onClick = { AddingScreenOn = !AddingScreenOn }
+        )
     }
 }
 

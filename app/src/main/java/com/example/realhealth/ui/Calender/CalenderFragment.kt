@@ -175,8 +175,6 @@ fun MainAppCalender() {
 
     var jsonDataList: List<todo> by remember { mutableStateOf(emptyList()) }
 
-    // 운동 추천 팝업 상태
-    /*val showSuggestionDialog = remember { mutableStateOf(false) }*/
     val apiKey = "" // 👉 여긴 안전하게 보관하세요
 
     var showSuggestionDialog by remember { mutableStateOf(false) }

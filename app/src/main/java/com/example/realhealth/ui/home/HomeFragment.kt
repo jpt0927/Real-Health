@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.PopupMenu
+import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
@@ -56,6 +57,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     private var isMapMode = true
     private val gymList = mutableListOf<Gym>()
     private var isFirstMapIdle = true
+    private var hasMarkers = false
 
     private val locationPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
@@ -71,7 +73,17 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
     private fun sortGymsByDistance() {
         gymList.sortBy {
-            it.distance?.replace("km", "")?.replace("m", "")?.toDoubleOrNull() ?: Double.MAX_VALUE
+            val distanceStr = it.distance ?: return@sortBy Double.MAX_VALUE
+            when {
+                distanceStr.contains("km") -> {
+                    val value = distanceStr.replace("km", "").trim().toDoubleOrNull() ?: Double.MAX_VALUE
+                    value * 1000 // km → m 변환
+                }
+                distanceStr.contains("m") -> {
+                    distanceStr.replace("m", "").trim().toDoubleOrNull() ?: Double.MAX_VALUE
+                }
+                else -> Double.MAX_VALUE
+            }
         }
         recyclerView.adapter?.notifyDataSetChanged()
     }
@@ -109,6 +121,8 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         }
 
         toggleButton.setOnClickListener {
+            val center = mMap.cameraPosition.target
+
             if (isMapMode) {
                 searchNearbyGyms(mMap.cameraPosition.target)
                 toggleButton.text = "목록"
@@ -119,6 +133,12 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                 recyclerView.visibility = View.VISIBLE
                 btnSort.visibility = View.VISIBLE
                 recyclerView.adapter?.notifyDataSetChanged()
+
+                if (!hasMarkers) {
+                    mMap.clear()
+                    gymList.clear()
+                    searchNearbyGyms(center)
+                }
             }
             isMapMode = !isMapMode
         }
@@ -140,6 +160,12 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
             val favoriteGyms = gymList.filter {
                 FavoriteManager.isFavorite(requireContext(), it.placeId)
             }
+
+            if (favoriteGyms.isEmpty()) {
+                Toast.makeText(requireContext(), "즐겨찾기 목록이 없습니다.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             val markerIcon = resizeMarkerIcon(requireContext(), R.drawable.favorites, 80, 80)
             favoriteGyms.forEach { gym ->
                 mMap.addMarker(
@@ -170,19 +196,31 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
             viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    if (!isMapMode) {
-                        // 목록보기 → 지도보기로 전환
-                        isMapMode = true
-                        recyclerView.visibility = View.GONE
-                        btnSort.visibility = View.GONE
-                        toggleButton.text = "목록"
-                        mMap.clear() // 지도 마커 제거
-                    } else {
-                        // 지도보기 → 기본 뒤로가기(앱 종료 등)
-                        isEnabled = false
-                        requireActivity().onBackPressedDispatcher.onBackPressed()
+                    when {
+                        hasMarkers -> {
+                            mMap.clear()
+                            hasMarkers = false
+                            recyclerView.visibility = View.GONE
+                            btnSort.visibility = View.GONE
+                            toggleButton.text = getString(R.string.workout)
+                            isMapMode = true
+                        }
+
+                        !isMapMode -> {
+                            isMapMode = true
+                            recyclerView.visibility = View.GONE
+                            btnSort.visibility = View.GONE
+                            toggleButton.text = "목록"
+                            mMap.clear()
+                        }
+
+                        // ✅ 지도 모드일 때 → 앱 종료
+                        else -> {
+                            isEnabled = false
+                            requireActivity().onBackPressedDispatcher.onBackPressed()
+                        }
                     }
-                }
+                   }
             }
         )
 
@@ -359,6 +397,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
                                             .title(name)
                                             .icon(gymicon)
                                     )
+                                    hasMarkers = true
                                 }
                             }
                         }
